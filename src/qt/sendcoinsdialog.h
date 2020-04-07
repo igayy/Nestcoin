@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_SENDCOINSDIALOG_H
-#define PIGYCOIN_QT_SENDCOINSDIALOG_H
+#ifndef NESTCOIN_QT_SENDCOINSDIALOG_H
+#define NESTCOIN_QT_SENDCOINSDIALOG_H
 
 #include <qt/walletmodel.h>
 
@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending pigycoins */
+/** Dialog for sending nestcoins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -123,4 +123,4 @@ private:
     int secDelay;
 };
 
-#endif // PIGYCOIN_QT_SENDCOINSDIALOG_H
+#endif // NESTCOIN_QT_SENDCOINSDIALOG_H

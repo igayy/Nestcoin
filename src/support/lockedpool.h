@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SUPPORT_LOCKEDPOOL_H
-#define PIGYCOIN_SUPPORT_LOCKEDPOOL_H
+#ifndef NESTCOIN_SUPPORT_LOCKEDPOOL_H
+#define NESTCOIN_SUPPORT_LOCKEDPOOL_H
 
 #include <stdint.h>
 #include <list>
@@ -237,4 +237,4 @@ private:
     static std::once_flag init_flag;
 };
 
-#endif // PIGYCOIN_SUPPORT_LOCKEDPOOL_H
+#endif // NESTCOIN_SUPPORT_LOCKEDPOOL_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SCRIPT_SIGCACHE_H
-#define PIGYCOIN_SCRIPT_SIGCACHE_H
+#ifndef NESTCOIN_SCRIPT_SIGCACHE_H
+#define NESTCOIN_SCRIPT_SIGCACHE_H
 
 #include <script/interpreter.h>
 
@@ -53,4 +53,4 @@ public:
 
 void InitSignatureCache();
 
-#endif // PIGYCOIN_SCRIPT_SIGCACHE_H
+#endif // NESTCOIN_SCRIPT_SIGCACHE_H

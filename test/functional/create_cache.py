@@ -9,9 +9,9 @@ multiple functional tests. This helper script is executed by test_runner when mu
 tests are being run in parallel.
 """
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 
-class CreateCache(PigycoinTestFramework):
+class CreateCache(NestcoinTestFramework):
     # Test network and test nodes are not required:
 
     def set_test_params(self):

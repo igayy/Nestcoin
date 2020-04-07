@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_OUTPUTTYPE_H
-#define PIGYCOIN_OUTPUTTYPE_H
+#ifndef NESTCOIN_OUTPUTTYPE_H
+#define NESTCOIN_OUTPUTTYPE_H
 
 #include <keystore.h>
 #include <script/standard.h>
@@ -45,5 +45,5 @@ std::vector<CTxDestination> GetAllDestinationsForKey(const CPubKey& key);
  */
 CTxDestination AddAndGetDestinationForScript(CKeyStore& keystore, const CScript& script, OutputType);
 
-#endif // PIGYCOIN_OUTPUTTYPE_H
+#endif // NESTCOIN_OUTPUTTYPE_H
 

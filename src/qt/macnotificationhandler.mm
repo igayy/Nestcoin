@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.pigycoin.Pigycoin-Qt";
+        return @"org.nestcoin.Nestcoin-Qt";
     } else {
         return [self __bundleIdentifier];
     }

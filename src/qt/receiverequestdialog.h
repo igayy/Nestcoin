@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_RECEIVEREQUESTDIALOG_H
-#define PIGYCOIN_QT_RECEIVEREQUESTDIALOG_H
+#ifndef NESTCOIN_QT_RECEIVEREQUESTDIALOG_H
+#define NESTCOIN_QT_RECEIVEREQUESTDIALOG_H
 
 #include <qt/walletmodel.h>
 
@@ -66,4 +66,4 @@ private:
     SendCoinsRecipient info;
 };
 
-#endif // PIGYCOIN_QT_RECEIVEREQUESTDIALOG_H
+#endif // NESTCOIN_QT_RECEIVEREQUESTDIALOG_H

@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <qt/rpcconsole.h>

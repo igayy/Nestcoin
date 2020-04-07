@@ -2,16 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CHAINPARAMSBASE_H
-#define PIGYCOIN_CHAINPARAMSBASE_H
+#ifndef NESTCOIN_CHAINPARAMSBASE_H
+#define NESTCOIN_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between pigycoin-cli and pigycoind)
- * of a given instance of the Pigycoin system.
+ * CBaseChainParams defines the base parameters (shared between nestcoin-cli and nestcoind)
+ * of a given instance of the Nestcoin system.
  */
 class CBaseChainParams
 {
@@ -53,4 +53,4 @@ const CBaseChainParams& BaseParams();
 /** Sets the params returned by Params() to those for the given network. */
 void SelectBaseParams(const std::string& chain);
 
-#endif // PIGYCOIN_CHAINPARAMSBASE_H
+#endif // NESTCOIN_CHAINPARAMSBASE_H

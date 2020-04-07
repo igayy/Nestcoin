@@ -8,10 +8,10 @@
 - Test that it is not possible to mine to an invalid address.
 """
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class DisableWalletTest (PigycoinTestFramework):
+class DisableWalletTest (NestcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

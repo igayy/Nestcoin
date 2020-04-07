@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CHAINPARAMS_H
-#define PIGYCOIN_CHAINPARAMS_H
+#ifndef NESTCOIN_CHAINPARAMS_H
+#define NESTCOIN_CHAINPARAMS_H
 
 #include <chainparamsbase.h>
 #include <consensus/params.h>
@@ -39,7 +39,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Pigycoin system. There are three: the main network on which people trade goods
+ * Nestcoin system. There are three: the main network on which people trade goods
  * and services, the public test network which gets reset from time to time and
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
@@ -127,4 +127,4 @@ void SelectParams(const std::string& chain);
  */
 void UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64_t nStartTime, int64_t nTimeout);
 
-#endif // PIGYCOIN_CHAINPARAMS_H
+#endif // NESTCOIN_CHAINPARAMS_H

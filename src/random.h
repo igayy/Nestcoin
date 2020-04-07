@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RANDOM_H
-#define PIGYCOIN_RANDOM_H
+#ifndef NESTCOIN_RANDOM_H
+#define NESTCOIN_RANDOM_H
 
 #include <crypto/chacha20.h>
 #include <crypto/common.h>
@@ -150,4 +150,4 @@ bool Random_SanityCheck();
 /** Initialize the RNG. */
 void RandomInit();
 
-#endif // PIGYCOIN_RANDOM_H
+#endif // NESTCOIN_RANDOM_H

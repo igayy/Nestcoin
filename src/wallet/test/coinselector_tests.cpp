@@ -8,7 +8,7 @@
 #include <amount.h>
 #include <primitives/transaction.h>
 #include <random.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 #include <wallet/test/wallet_test_fixture.h>
 
 #include <boost/test/unit_test.hpp>

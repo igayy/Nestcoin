@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SUPPORT_ALLOCATORS_SECURE_H
-#define PIGYCOIN_SUPPORT_ALLOCATORS_SECURE_H
+#ifndef NESTCOIN_SUPPORT_ALLOCATORS_SECURE_H
+#define NESTCOIN_SUPPORT_ALLOCATORS_SECURE_H
 
 #include <support/lockedpool.h>
 #include <support/cleanse.h>
@@ -55,4 +55,4 @@ struct secure_allocator : public std::allocator<T> {
 // This is exactly like std::string, but with a custom allocator.
 typedef std::basic_string<char, std::char_traits<char>, secure_allocator<char> > SecureString;
 
-#endif // PIGYCOIN_SUPPORT_ALLOCATORS_SECURE_H
+#endif // NESTCOIN_SUPPORT_ALLOCATORS_SECURE_H

@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
-#define PIGYCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#ifndef NESTCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#define NESTCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <wallet/wallet.h>
 
@@ -20,4 +20,4 @@ struct WalletTestingSetup: public TestingSetup {
     CWallet m_wallet;
 };
 
-#endif // PIGYCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#endif // NESTCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_SERVER_H
-#define PIGYCOIN_RPC_SERVER_H
+#ifndef NESTCOIN_RPC_SERVER_H
+#define NESTCOIN_RPC_SERVER_H
 
 #include <amount.h>
 #include <rpc/protocol.h>
@@ -138,7 +138,7 @@ public:
 };
 
 /**
- * Pigycoin RPC command dispatcher.
+ * Nestcoin RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -206,4 +206,4 @@ std::string JSONRPCExecBatch(const JSONRPCRequest& jreq, const UniValue& vReq);
 // Retrieves any serialization flags requested in command line argument
 int RPCSerializationFlags();
 
-#endif // PIGYCOIN_RPC_SERVER_H
+#endif // NESTCOIN_RPC_SERVER_H

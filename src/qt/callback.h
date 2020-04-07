@@ -1,5 +1,5 @@
-#ifndef PIGYCOIN_QT_CALLBACK_H
-#define PIGYCOIN_QT_CALLBACK_H
+#ifndef NESTCOIN_QT_CALLBACK_H
+#define NESTCOIN_QT_CALLBACK_H
 
 #include <QObject>
 
@@ -27,4 +27,4 @@ FunctionCallback<F>* makeCallback(F f)
     return new FunctionCallback<F>(std::move(f));
 }
 
-#endif // PIGYCOIN_QT_CALLBACK_H
+#endif // NESTCOIN_QT_CALLBACK_H

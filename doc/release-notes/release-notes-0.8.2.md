@@ -1,11 +1,11 @@
-Pigycoin-Qt version 0.8.2 is now available from:
-  http://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.8.2/
+Nestcoin-Qt version 0.8.2 is now available from:
+  http://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.8.2/
 
 This is a maintenance release that fixes many bugs and includes
 a few small new features.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/pigycoin/pigycoin/issues
+  https://github.com/nestcoin/nestcoin/issues
 
 
 How to Upgrade
@@ -13,7 +13,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/Pigycoin-Qt (on Mac) or pigycoind/pigycoin-qt (on Linux).
+/Applications/Nestcoin-Qt (on Mac) or nestcoind/nestcoin-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you
 run 0.8.2 your blockchain files will be re-indexed, which will take
@@ -43,7 +43,7 @@ with code that automatically calculates and suggests appropriate fees in the
 0.9 release and note that if you set a fee policy significantly different from
 the rest of the network your transactions may never confirm.
 
-Pigycoin-Qt changes
+Nestcoin-Qt changes
 
 * New icon and splash screen
 * Improve reporting of synchronization process
@@ -58,7 +58,7 @@ Pigycoin-Qt changes
   to current translations
 
 MacOSX:
-* OSX support for click-to-pay (pigycoin:) links
+* OSX support for click-to-pay (nestcoin:) links
 * Fix GUI disappearing problem on MacOSX (issue #1522)
 
 Linux/Unix:
@@ -97,8 +97,8 @@ Wallet compatibility/rescuing
 
 Known Bugs
 
-* Entering the 'getblocktemplate' or 'getwork' RPC commands into the Pigycoin-Qt debug
-console will cause Pigycoin-Qt to crash. Run Pigycoin-Qt with the -server command-line
+* Entering the 'getblocktemplate' or 'getwork' RPC commands into the Nestcoin-Qt debug
+console will cause Nestcoin-Qt to crash. Run Nestcoin-Qt with the -server command-line
 option to workaround.
 
 Thanks to everybody who contributed to the 0.8.2 release!

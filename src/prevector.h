@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_PREVECTOR_H
-#define PIGYCOIN_PREVECTOR_H
+#ifndef NESTCOIN_PREVECTOR_H
+#define NESTCOIN_PREVECTOR_H
 
 #include <assert.h>
 #include <stdlib.h>
@@ -526,4 +526,4 @@ public:
 };
 #pragma pack(pop)
 
-#endif // PIGYCOIN_PREVECTOR_H
+#endif // NESTCOIN_PREVECTOR_H

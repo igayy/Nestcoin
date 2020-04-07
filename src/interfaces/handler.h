@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_INTERFACES_HANDLER_H
-#define PIGYCOIN_INTERFACES_HANDLER_H
+#ifndef NESTCOIN_INTERFACES_HANDLER_H
+#define NESTCOIN_INTERFACES_HANDLER_H
 
 #include <memory>
 
@@ -32,4 +32,4 @@ std::unique_ptr<Handler> MakeHandler(boost::signals2::connection connection);
 
 } // namespace interfaces
 
-#endif // PIGYCOIN_INTERFACES_HANDLER_H
+#endif // NESTCOIN_INTERFACES_HANDLER_H

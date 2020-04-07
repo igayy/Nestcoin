@@ -6,7 +6,7 @@
 #include <string>
 #include <script/sign.h>
 #include <script/standard.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 #include <boost/test/unit_test.hpp>
 #include <script/descriptor.h>
 #include <utilstrencodings.h>

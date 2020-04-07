@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CHECKPOINTS_H
-#define PIGYCOIN_CHECKPOINTS_H
+#ifndef NESTCOIN_CHECKPOINTS_H
+#define NESTCOIN_CHECKPOINTS_H
 
 #include <uint256.h>
 
@@ -24,4 +24,4 @@ CBlockIndex* GetLastCheckpoint(const CCheckpointData& data);
 
 } //namespace Checkpoints
 
-#endif // PIGYCOIN_CHECKPOINTS_H
+#endif // NESTCOIN_CHECKPOINTS_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_THREADINTERRUPT_H
-#define PIGYCOIN_THREADINTERRUPT_H
+#ifndef NESTCOIN_THREADINTERRUPT_H
+#define NESTCOIN_THREADINTERRUPT_H
 
 #include <atomic>
 #include <chrono>
@@ -32,4 +32,4 @@ private:
     std::atomic<bool> flag;
 };
 
-#endif //PIGYCOIN_THREADINTERRUPT_H
+#endif //NESTCOIN_THREADINTERRUPT_H

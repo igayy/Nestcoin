@@ -4,8 +4,8 @@
 //
 // C++ wrapper around ctaes, a constant-time AES implementation
 
-#ifndef PIGYCOIN_CRYPTO_AES_H
-#define PIGYCOIN_CRYPTO_AES_H
+#ifndef NESTCOIN_CRYPTO_AES_H
+#define NESTCOIN_CRYPTO_AES_H
 
 extern "C" {
 #include <crypto/ctaes/ctaes.h>
@@ -115,4 +115,4 @@ private:
     unsigned char iv[AES_BLOCKSIZE];
 };
 
-#endif // PIGYCOIN_CRYPTO_AES_H
+#endif // NESTCOIN_CRYPTO_AES_H

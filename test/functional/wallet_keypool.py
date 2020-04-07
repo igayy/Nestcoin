@@ -6,10 +6,10 @@
 
 import time
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
 
-class KeyPoolTest(PigycoinTestFramework):
+class KeyPoolTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

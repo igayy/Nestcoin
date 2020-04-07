@@ -1,43 +1,43 @@
-![](images/pigycoin.png)
-Pigycoin Core integration/staging tree
+![](images/nestcoin.png)
+Nestcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=0.18)](https://travis-ci.org/pigycoin-project/pigycoin)
+[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=0.18)](https://travis-ci.org/nestcoin-project/nestcoin)
 
-https://pigycoin.org ( On Progress )
+https://nestcoin.org ( On Progress )
 
-What is Pigycoin?
+What is Nestcoin?
 ----------------
 
-Pigycoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Pigycoin uses peer-to-peer technology to operate
+Nestcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Nestcoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Pigycoin Core is the name of open source
+out collectively by the network. Nestcoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Pigycoin Core software, see [https://pigycoin.org](https://pigycoin.org).
+the Nestcoin Core software, see [https://nestcoin.org](https://nestcoin.org).
 
 License
 -------
 
-Pigycoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Nestcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/pigycoin-project/pigycoin/tags) are created
-regularly to indicate new official, stable release versions of Pigycoin Core.
+completely stable. [Tags](https://github.com/nestcoin-project/nestcoin/tags) are created
+regularly to indicate new official, stable release versions of Nestcoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/pigycoin-dev)
+The developer [mailing list](https://groups.google.com/forum/#!forum/nestcoin-dev)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
 
-Developer IRC can be found on Freenode at #pigycoin-dev.
+Developer IRC can be found on Freenode at #nestcoin-dev.
 
 Testing
 -------
@@ -70,8 +70,8 @@ not straightforward.
 Translations
 ------------
 
-We only accept translation fixes that are submitted through [Pigycoin Core's Transifex page](https://www.transifex.com/projects/p/pigycoin/).
-Translations are converted to Pigycoin periodically.
+We only accept translation fixes that are submitted through [Nestcoin Core's Transifex page](https://www.transifex.com/projects/p/nestcoin/).
+Translations are converted to Nestcoin periodically.
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.

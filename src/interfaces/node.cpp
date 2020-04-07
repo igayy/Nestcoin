@@ -30,7 +30,7 @@
 #include <warnings.h>
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 #ifdef ENABLE_WALLET
 #include <wallet/fees.h>

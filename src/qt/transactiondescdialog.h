@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_TRANSACTIONDESCDIALOG_H
-#define PIGYCOIN_QT_TRANSACTIONDESCDIALOG_H
+#ifndef NESTCOIN_QT_TRANSACTIONDESCDIALOG_H
+#define NESTCOIN_QT_TRANSACTIONDESCDIALOG_H
 
 #include <QDialog>
 
@@ -28,4 +28,4 @@ private:
     Ui::TransactionDescDialog *ui;
 };
 
-#endif // PIGYCOIN_QT_TRANSACTIONDESCDIALOG_H
+#endif // NESTCOIN_QT_TRANSACTIONDESCDIALOG_H

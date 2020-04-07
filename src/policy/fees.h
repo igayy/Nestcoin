@@ -1,9 +1,9 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef PIGYCOIN_POLICY_FEES_H
-#define PIGYCOIN_POLICY_FEES_H
+#ifndef NESTCOIN_POLICY_FEES_H
+#define NESTCOIN_POLICY_FEES_H
 
 #include <amount.h>
 #include <policy/feerate.h>
@@ -295,4 +295,4 @@ private:
     FastRandomContext insecure_rand;
 };
 
-#endif // PIGYCOIN_POLICY_FEES_H
+#endif // NESTCOIN_POLICY_FEES_H

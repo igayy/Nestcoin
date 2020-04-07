@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SUPPORT_EVENTS_H
-#define PIGYCOIN_SUPPORT_EVENTS_H
+#ifndef NESTCOIN_SUPPORT_EVENTS_H
+#define NESTCOIN_SUPPORT_EVENTS_H
 
 #include <ios>
 #include <memory>
@@ -53,4 +53,4 @@ inline raii_evhttp_connection obtain_evhttp_connection_base(struct event_base* b
     return result;
 }
 
-#endif // PIGYCOIN_SUPPORT_EVENTS_H
+#endif // NESTCOIN_SUPPORT_EVENTS_H

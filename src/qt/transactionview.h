@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_TRANSACTIONVIEW_H
-#define PIGYCOIN_QT_TRANSACTIONVIEW_H
+#ifndef NESTCOIN_QT_TRANSACTIONVIEW_H
+#define NESTCOIN_QT_TRANSACTIONVIEW_H
 
 #include <qt/guiutil.h>
 
@@ -121,4 +121,4 @@ public Q_SLOTS:
     void focusTransaction(const uint256& txid);
 };
 
-#endif // PIGYCOIN_QT_TRANSACTIONVIEW_H
+#endif // NESTCOIN_QT_TRANSACTIONVIEW_H

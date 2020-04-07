@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_WALLETFRAME_H
-#define PIGYCOIN_QT_WALLETFRAME_H
+#ifndef NESTCOIN_QT_WALLETFRAME_H
+#define NESTCOIN_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
 
-class PigycoinGUI;
+class NestcoinGUI;
 class ClientModel;
 class PlatformStyle;
 class SendCoinsRecipient;
@@ -21,9 +21,9 @@ QT_END_NAMESPACE
 
 /**
  * A container for embedding all wallet-related
- * controls into PigycoinGUI. The purpose of this class is to allow future
+ * controls into NestcoinGUI. The purpose of this class is to allow future
  * refinements of the wallet controls with minimal need for further
- * modifications to PigycoinGUI, thus greatly simplifying merges while
+ * modifications to NestcoinGUI, thus greatly simplifying merges while
  * reducing the risk of breaking top-level stuff.
  */
 class WalletFrame : public QFrame
@@ -31,7 +31,7 @@ class WalletFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit WalletFrame(const PlatformStyle *platformStyle, PigycoinGUI *_gui = 0);
+    explicit WalletFrame(const PlatformStyle *platformStyle, NestcoinGUI *_gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel *clientModel);
@@ -51,7 +51,7 @@ Q_SIGNALS:
 
 private:
     QStackedWidget *walletStack;
-    PigycoinGUI *gui;
+    NestcoinGUI *gui;
     ClientModel *clientModel;
     QMap<QString, WalletView*> mapWalletViews;
 
@@ -94,4 +94,4 @@ public Q_SLOTS:
     void outOfSyncWarningClicked();
 };
 
-#endif // PIGYCOIN_QT_WALLETFRAME_H
+#endif // NESTCOIN_QT_WALLETFRAME_H

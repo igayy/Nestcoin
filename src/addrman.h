@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ADDRMAN_H
-#define PIGYCOIN_ADDRMAN_H
+#ifndef NESTCOIN_ADDRMAN_H
+#define NESTCOIN_ADDRMAN_H
 
 #include <netaddress.h>
 #include <protocol.h>
@@ -638,4 +638,4 @@ public:
 
 };
 
-#endif // PIGYCOIN_ADDRMAN_H
+#endif // NESTCOIN_ADDRMAN_H

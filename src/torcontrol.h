@@ -5,8 +5,8 @@
 /**
  * Functionality for communicating with Tor.
  */
-#ifndef PIGYCOIN_TORCONTROL_H
-#define PIGYCOIN_TORCONTROL_H
+#ifndef NESTCOIN_TORCONTROL_H
+#define NESTCOIN_TORCONTROL_H
 
 #include <scheduler.h>
 
@@ -17,4 +17,4 @@ void StartTorControl();
 void InterruptTorControl();
 void StopTorControl();
 
-#endif /* PIGYCOIN_TORCONTROL_H */
+#endif /* NESTCOIN_TORCONTROL_H */

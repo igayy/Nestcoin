@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_NETMESSAGEMAKER_H
-#define PIGYCOIN_NETMESSAGEMAKER_H
+#ifndef NESTCOIN_NETMESSAGEMAKER_H
+#define NESTCOIN_NETMESSAGEMAKER_H
 
 #include <net.h>
 #include <serialize.h>
@@ -33,4 +33,4 @@ private:
     const int nVersion;
 };
 
-#endif // PIGYCOIN_NETMESSAGEMAKER_H
+#endif // NESTCOIN_NETMESSAGEMAKER_H

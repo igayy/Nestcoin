@@ -4,8 +4,8 @@
 
 #include <qt/guiutil.h>
 
-#include <qt/pigycoinaddressvalidator.h>
-#include <qt/pigycoinunits.h>
+#include <qt/nestcoinaddressvalidator.h>
+#include <qt/nestcoinunits.h>
 #include <qt/qvalidatedlineedit.h>
 #include <qt/walletmodel.h>
 
@@ -112,16 +112,16 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     widget->setFont(fixedPitchFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Pigycoin address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a Nestcoin address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
-    widget->setValidator(new PigycoinAddressEntryValidator(parent));
-    widget->setCheckValidator(new PigycoinAddressCheckValidator(parent));
+    widget->setValidator(new NestcoinAddressEntryValidator(parent));
+    widget->setCheckValidator(new NestcoinAddressCheckValidator(parent));
 }
 
-bool parsePigycoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseNestcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no pigycoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("pigycoin"))
+    // return if URI is not valid or is no nestcoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("nestcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -157,7 +157,7 @@ bool parsePigycoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!PigycoinUnits::parse(PigycoinUnits::BTC, i->second, &rv.amount))
+                if(!NestcoinUnits::parse(NestcoinUnits::BTC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -175,20 +175,20 @@ bool parsePigycoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parsePigycoinURI(QString uri, SendCoinsRecipient *out)
+bool parseNestcoinURI(QString uri, SendCoinsRecipient *out)
 {
     QUrl uriInstance(uri);
-    return parsePigycoinURI(uriInstance, out);
+    return parseNestcoinURI(uriInstance, out);
 }
 
-QString formatPigycoinURI(const SendCoinsRecipient &info)
+QString formatNestcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("pigycoin:%1").arg(info.address);
+    QString ret = QString("nestcoin:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(PigycoinUnits::format(PigycoinUnits::BTC, info.amount, false, PigycoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(NestcoinUnits::format(NestcoinUnits::BTC, info.amount, false, NestcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -366,9 +366,9 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
 }
 
-bool openPigycoinConf()
+bool openNestcoinConf()
 {
-    boost::filesystem::path pathConfig = GetConfigFile(gArgs.GetArg("-conf", PIGYCOIN_CONF_FILENAME));
+    boost::filesystem::path pathConfig = GetConfigFile(gArgs.GetArg("-conf", NESTCOIN_CONF_FILENAME));
 
     /* Create the file */
     boost::filesystem::ofstream configFile(pathConfig, std::ios_base::app);
@@ -378,7 +378,7 @@ bool openPigycoinConf()
 
     configFile.close();
 
-    /* Open pigycoin.conf with the associated application */
+    /* Open nestcoin.conf with the associated application */
     return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
 
@@ -526,15 +526,15 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Pigycoin.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Nestcoin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Pigycoin (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Pigycoin (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Nestcoin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Nestcoin (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Pigycoin*.lnk
+    // check for Nestcoin*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -624,8 +624,8 @@ fs::path static GetAutostartFilePath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "pigycoin.desktop";
-    return GetAutostartDir() / strprintf("pigycoin-%s.lnk", chain);
+        return GetAutostartDir() / "nestcoin.desktop";
+    return GetAutostartDir() / strprintf("nestcoin-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -665,13 +665,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = gArgs.GetChainName();
-        // Write a pigycoin.desktop file to the autostart directory:
+        // Write a nestcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Pigycoin\n";
+            optionFile << "Name=Nestcoin\n";
         else
-            optionFile << strprintf("Name=Pigycoin (%s)\n", chain);
+            optionFile << strprintf("Name=Nestcoin (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", gArgs.GetBoolArg("-testnet", false), gArgs.GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -697,7 +697,7 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
         return nullptr;
     }
 
-    // loop through the list of startup items and try to find the pigycoin app
+    // loop through the list of startup items and try to find the nestcoin app
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
         UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
@@ -731,38 +731,38 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 
 bool GetStartOnSystemStartup()
 {
-    CFURLRef pigycoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (pigycoinAppUrl == nullptr) {
+    CFURLRef nestcoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (nestcoinAppUrl == nullptr) {
         return false;
     }
 
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, pigycoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, nestcoinAppUrl);
 
-    CFRelease(pigycoinAppUrl);
+    CFRelease(nestcoinAppUrl);
     return !!foundItem; // return boolified object
 }
 
 bool SetStartOnSystemStartup(bool fAutoStart)
 {
-    CFURLRef pigycoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-    if (pigycoinAppUrl == nullptr) {
+    CFURLRef nestcoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    if (nestcoinAppUrl == nullptr) {
         return false;
     }
 
     LSSharedFileListRef loginItems = LSSharedFileListCreate(nullptr, kLSSharedFileListSessionLoginItems, nullptr);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, pigycoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, nestcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add pigycoin app to startup item list
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, pigycoinAppUrl, nullptr, nullptr);
+        // add nestcoin app to startup item list
+        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, nestcoinAppUrl, nullptr, nullptr);
     }
     else if(!fAutoStart && foundItem) {
         // remove item
         LSSharedFileListItemRemove(loginItems, foundItem);
     }
 
-    CFRelease(pigycoinAppUrl);
+    CFRelease(nestcoinAppUrl);
     return true;
 }
 #pragma GCC diagnostic pop

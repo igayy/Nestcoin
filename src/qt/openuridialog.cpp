@@ -15,7 +15,7 @@ OpenURIDialog::OpenURIDialog(QWidget *parent) :
     ui(new Ui::OpenURIDialog)
 {
     ui->setupUi(this);
-    ui->uriEdit->setPlaceholderText("pigycoin:");
+    ui->uriEdit->setPlaceholderText("nestcoin:");
 }
 
 OpenURIDialog::~OpenURIDialog()
@@ -31,7 +31,7 @@ QString OpenURIDialog::getURI()
 void OpenURIDialog::accept()
 {
     SendCoinsRecipient rcp;
-    if(GUIUtil::parsePigycoinURI(getURI(), &rcp))
+    if(GUIUtil::parseNestcoinURI(getURI(), &rcp))
     {
         /* Only accept value URIs */
         QDialog::accept();
@@ -46,5 +46,5 @@ void OpenURIDialog::on_selectFileButton_clicked()
     if(filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("pigycoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("nestcoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }

@@ -1,12 +1,12 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_NETBASE_H
-#define PIGYCOIN_NETBASE_H
+#ifndef NESTCOIN_NETBASE_H
+#define NESTCOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <compat.h>
@@ -68,4 +68,4 @@ bool SetSocketNoDelay(const SOCKET& hSocket);
 struct timeval MillisToTimeval(int64_t nTimeout);
 void InterruptSocks5(bool interrupt);
 
-#endif // PIGYCOIN_NETBASE_H
+#endif // NESTCOIN_NETBASE_H

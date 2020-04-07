@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ZMQ_ZMQCONFIG_H
-#define PIGYCOIN_ZMQ_ZMQCONFIG_H
+#ifndef NESTCOIN_ZMQ_ZMQCONFIG_H
+#define NESTCOIN_ZMQ_ZMQCONFIG_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <stdarg.h>
@@ -21,4 +21,4 @@
 
 void zmqError(const char *str);
 
-#endif // PIGYCOIN_ZMQ_ZMQCONFIG_H
+#endif // NESTCOIN_ZMQ_ZMQCONFIG_H

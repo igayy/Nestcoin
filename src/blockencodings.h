@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_BLOCKENCODINGS_H
-#define PIGYCOIN_BLOCKENCODINGS_H
+#ifndef NESTCOIN_BLOCKENCODINGS_H
+#define NESTCOIN_BLOCKENCODINGS_H
 
 #include <primitives/block.h>
 
@@ -209,4 +209,4 @@ public:
     ReadStatus FillBlock(CBlock& block, const std::vector<CTransactionRef>& vtx_missing);
 };
 
-#endif // PIGYCOIN_BLOCKENCODINGS_H
+#endif // NESTCOIN_BLOCKENCODINGS_H

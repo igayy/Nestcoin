@@ -12,7 +12,7 @@
 
 #include <support/events.h>
 
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <vector>
 

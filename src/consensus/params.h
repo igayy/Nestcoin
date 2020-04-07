@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CONSENSUS_PARAMS_H
-#define PIGYCOIN_CONSENSUS_PARAMS_H
+#ifndef NESTCOIN_CONSENSUS_PARAMS_H
+#define NESTCOIN_CONSENSUS_PARAMS_H
 
 #include <uint256.h>
 #include <limits>
@@ -78,4 +78,4 @@ struct Params {
 };
 } // namespace Consensus
 
-#endif // PIGYCOIN_CONSENSUS_PARAMS_H
+#endif // NESTCOIN_CONSENSUS_PARAMS_H

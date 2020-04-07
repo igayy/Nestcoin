@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_PAYMENTSERVER_H
-#define PIGYCOIN_QT_PAYMENTSERVER_H
+#ifndef NESTCOIN_QT_PAYMENTSERVER_H
+#define NESTCOIN_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// pigycoin: URIs
+// nestcoin: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during
@@ -143,4 +143,4 @@ private:
     OptionsModel *optionsModel;
 };
 
-#endif // PIGYCOIN_QT_PAYMENTSERVER_H
+#endif // NESTCOIN_QT_PAYMENTSERVER_H

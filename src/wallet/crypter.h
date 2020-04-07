@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_CRYPTER_H
-#define PIGYCOIN_WALLET_CRYPTER_H
+#ifndef NESTCOIN_WALLET_CRYPTER_H
+#define NESTCOIN_WALLET_CRYPTER_H
 
 #include <keystore.h>
 #include <serialize.h>
@@ -159,4 +159,4 @@ public:
     boost::signals2::signal<void (CCryptoKeyStore* wallet)> NotifyStatusChanged;
 };
 
-#endif // PIGYCOIN_WALLET_CRYPTER_H
+#endif // NESTCOIN_WALLET_CRYPTER_H

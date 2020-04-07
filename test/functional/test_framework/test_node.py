@@ -2,7 +2,7 @@
 # Copyright (c) 2017-2018 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Class for pigycoind node under test"""
+"""Class for nestcoind node under test"""
 
 import contextlib
 import decimal
@@ -31,7 +31,7 @@ from .util import (
 # For Python 3.4 compatibility
 JSONDecodeError = getattr(json, "JSONDecodeError", ValueError)
 
-PIGYCOIND_PROC_WAIT_TIMEOUT = 60
+NESTCOIND_PROC_WAIT_TIMEOUT = 60
 
 
 class FailedToStartError(Exception):
@@ -45,7 +45,7 @@ class ErrorMatch(Enum):
 
 
 class TestNode():
-    """A class for representing a pigycoind node under test.
+    """A class for representing a nestcoind node under test.
 
     This class contains:
 
@@ -58,14 +58,14 @@ class TestNode():
     To make things easier for the test writer, any unrecognised messages will
     be dispatched to the RPC connection."""
 
-    def __init__(self, i, datadir, *, rpchost, timewait, pigycoind, pigycoin_cli, mocktime, coverage_dir, extra_conf=None, extra_args=None, use_cli=False):
+    def __init__(self, i, datadir, *, rpchost, timewait, nestcoind, nestcoin_cli, mocktime, coverage_dir, extra_conf=None, extra_args=None, use_cli=False):
         self.index = i
         self.datadir = datadir
         self.stdout_dir = os.path.join(self.datadir, "stdout")
         self.stderr_dir = os.path.join(self.datadir, "stderr")
         self.rpchost = rpchost
         self.rpc_timeout = timewait
-        self.binary = pigycoind
+        self.binary = nestcoind
         self.coverage_dir = coverage_dir
         if extra_conf != None:
             append_config(datadir, extra_conf)
@@ -84,7 +84,7 @@ class TestNode():
             "-uacomment=testnode%d" % i
         ]
 
-        self.cli = TestNodeCLI(pigycoin_cli, self.datadir)
+        self.cli = TestNodeCLI(nestcoin_cli, self.datadir)
         self.use_cli = use_cli
 
         self.running = False
@@ -122,7 +122,7 @@ class TestNode():
         raise AssertionError(self._node_msg(msg))
 
     def __del__(self):
-        # Ensure that we don't leave any pigycoind processes lying around after
+        # Ensure that we don't leave any nestcoind processes lying around after
         # the test ends
         if self.process and self.cleanup_on_exit:
             # Should only happen on test failure
@@ -144,7 +144,7 @@ class TestNode():
         if extra_args is None:
             extra_args = self.extra_args
 
-        # Add a new stdout and stderr file each time pigycoind is started
+        # Add a new stdout and stderr file each time nestcoind is started
         if stderr is None:
             stderr = tempfile.NamedTemporaryFile(dir=self.stderr_dir, delete=False)
         if stdout is None:
@@ -153,7 +153,7 @@ class TestNode():
         self.stdout = stdout
 
         # Delete any existing cookie file -- if such a file exists (eg due to
-        # unclean shutdown), it will get overwritten anyway by pigycoind, and
+        # unclean shutdown), it will get overwritten anyway by nestcoind, and
         # potentially interfere with our attempt to authenticate
         delete_cookie_file(self.datadir)
 
@@ -163,16 +163,16 @@ class TestNode():
         self.process = subprocess.Popen(self.args + extra_args, env=subp_env, stdout=stdout, stderr=stderr, **kwargs)
 
         self.running = True
-        self.log.debug("pigycoind started, waiting for RPC to come up")
+        self.log.debug("nestcoind started, waiting for RPC to come up")
 
     def wait_for_rpc_connection(self):
-        """Sets up an RPC connection to the pigycoind process. Returns False if unable to connect."""
+        """Sets up an RPC connection to the nestcoind process. Returns False if unable to connect."""
         # Poll at a rate of four times per second
         poll_per_s = 4
         for _ in range(poll_per_s * self.rpc_timeout):
             if self.process.poll() is not None:
                 raise FailedToStartError(self._node_msg(
-                    'pigycoind exited with status {} during initialization'.format(self.process.returncode)))
+                    'nestcoind exited with status {} during initialization'.format(self.process.returncode)))
             try:
                 self.rpc = get_rpc_proxy(rpc_url(self.datadir, self.index, self.rpchost), self.index, timeout=self.rpc_timeout, coveragedir=self.coverage_dir)
                 self.rpc.getblockcount()
@@ -187,11 +187,11 @@ class TestNode():
             except JSONRPCException as e:  # Initialization phase
                 if e.error['code'] != -28:  # RPC in warmup?
                     raise  # unknown JSON RPC exception
-            except ValueError as e:  # cookie file not found and no rpcuser or rpcassword. pigycoind still starting
+            except ValueError as e:  # cookie file not found and no rpcuser or rpcassword. nestcoind still starting
                 if "No RPC credentials" not in str(e):
                     raise
             time.sleep(1.0 / poll_per_s)
-        self._raise_assertion_error("Unable to connect to pigycoind")
+        self._raise_assertion_error("Unable to connect to nestcoind")
 
     def get_wallet_rpc(self, wallet_name):
         if self.use_cli:
@@ -243,7 +243,7 @@ class TestNode():
         self.log.debug("Node stopped")
         return True
 
-    def wait_until_stopped(self, timeout=PIGYCOIND_PROC_WAIT_TIMEOUT):
+    def wait_until_stopped(self, timeout=NESTCOIND_PROC_WAIT_TIMEOUT):
         wait_until(self.is_node_stopped, timeout=timeout)
 
     @contextlib.contextmanager
@@ -266,11 +266,11 @@ class TestNode():
     def assert_start_raises_init_error(self, extra_args=None, expected_msg=None, match=ErrorMatch.FULL_TEXT, *args, **kwargs):
         """Attempt to start the node and expect it to raise an error.
 
-        extra_args: extra arguments to pass through to pigycoind
-        expected_msg: regex that stderr should match when pigycoind fails
+        extra_args: extra arguments to pass through to nestcoind
+        expected_msg: regex that stderr should match when nestcoind fails
 
-        Will throw if pigycoind starts without an error.
-        Will throw if an expected_msg is provided and it does not match pigycoind's stdout."""
+        Will throw if nestcoind starts without an error.
+        Will throw if an expected_msg is provided and it does not match nestcoind's stdout."""
         with tempfile.NamedTemporaryFile(dir=self.stderr_dir, delete=False) as log_stderr, \
              tempfile.NamedTemporaryFile(dir=self.stdout_dir, delete=False) as log_stdout:
             try:
@@ -279,7 +279,7 @@ class TestNode():
                 self.stop_node()
                 self.wait_until_stopped()
             except FailedToStartError as e:
-                self.log.debug('pigycoind failed to start: %s', e)
+                self.log.debug('nestcoind failed to start: %s', e)
                 self.running = False
                 self.process = None
                 # Check stderr for expected message
@@ -300,15 +300,15 @@ class TestNode():
                                 'Expected message "{}" does not fully match stderr:\n"{}"'.format(expected_msg, stderr))
             else:
                 if expected_msg is None:
-                    assert_msg = "pigycoind should have exited with an error"
+                    assert_msg = "nestcoind should have exited with an error"
                 else:
-                    assert_msg = "pigycoind should have exited with expected error " + expected_msg
+                    assert_msg = "nestcoind should have exited with expected error " + expected_msg
                 self._raise_assertion_error(assert_msg)
 
     def node_encrypt_wallet(self, passphrase):
         """"Encrypts the wallet.
 
-        This causes pigycoind to shutdown, so this method takes
+        This causes nestcoind to shutdown, so this method takes
         care of cleaning up resources."""
         self.encryptwallet(passphrase)
         self.wait_until_stopped()
@@ -357,17 +357,17 @@ class TestNodeCLIAttr:
         return lambda: self(*args, **kwargs)
 
 class TestNodeCLI():
-    """Interface to pigycoin-cli for an individual node"""
+    """Interface to nestcoin-cli for an individual node"""
 
     def __init__(self, binary, datadir):
         self.options = []
         self.binary = binary
         self.datadir = datadir
         self.input = None
-        self.log = logging.getLogger('TestFramework.pigycoincli')
+        self.log = logging.getLogger('TestFramework.nestcoincli')
 
     def __call__(self, *options, input=None):
-        # TestNodeCLI is callable with pigycoin-cli command-line options
+        # TestNodeCLI is callable with nestcoin-cli command-line options
         cli = TestNodeCLI(self.binary, self.datadir)
         cli.options = [str(o) for o in options]
         cli.input = input
@@ -386,17 +386,17 @@ class TestNodeCLI():
         return results
 
     def send_cli(self, command=None, *args, **kwargs):
-        """Run pigycoin-cli command. Deserializes returned string as python object."""
+        """Run nestcoin-cli command. Deserializes returned string as python object."""
         pos_args = [str(arg).lower() if type(arg) is bool else str(arg) for arg in args]
         named_args = [str(key) + "=" + str(value) for (key, value) in kwargs.items()]
-        assert not (pos_args and named_args), "Cannot use positional arguments and named arguments in the same pigycoin-cli call"
+        assert not (pos_args and named_args), "Cannot use positional arguments and named arguments in the same nestcoin-cli call"
         p_args = [self.binary, "-datadir=" + self.datadir] + self.options
         if named_args:
             p_args += ["-named"]
         if command is not None:
             p_args += [command]
         p_args += pos_args + named_args
-        self.log.debug("Running pigycoin-cli command: %s" % command)
+        self.log.debug("Running nestcoin-cli command: %s" % command)
         process = subprocess.Popen(p_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
         cli_stdout, cli_stderr = process.communicate(input=self.input)
         returncode = process.poll()

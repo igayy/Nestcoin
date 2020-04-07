@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H
-#define PIGYCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H
+#ifndef NESTCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H
+#define NESTCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H
 
 #include <zmq/zmqconfig.h>
 
@@ -41,4 +41,4 @@ protected:
     std::string address;
 };
 
-#endif // PIGYCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H
+#endif // NESTCOIN_ZMQ_ZMQABSTRACTNOTIFIER_H

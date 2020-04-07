@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_NET_PROCESSING_H
-#define PIGYCOIN_NET_PROCESSING_H
+#ifndef NESTCOIN_NET_PROCESSING_H
+#define NESTCOIN_NET_PROCESSING_H
 
 #include <net.h>
 #include <validationinterface.h>
@@ -84,4 +84,4 @@ struct CNodeStateStats {
 /** Get statistics from node state */
 bool GetNodeStateStats(NodeId nodeid, CNodeStateStats &stats);
 
-#endif // PIGYCOIN_NET_PROCESSING_H
+#endif // NESTCOIN_NET_PROCESSING_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_THREADSAFETY_H
-#define PIGYCOIN_THREADSAFETY_H
+#ifndef NESTCOIN_THREADSAFETY_H
+#define NESTCOIN_THREADSAFETY_H
 
 #ifdef __clang__
 // TL;DR Add GUARDED_BY(mutex) to member variables. The others are
@@ -54,4 +54,4 @@
 #define ASSERT_EXCLUSIVE_LOCK(...)
 #endif // __GNUC__
 
-#endif // PIGYCOIN_THREADSAFETY_H
+#endif // NESTCOIN_THREADSAFETY_H

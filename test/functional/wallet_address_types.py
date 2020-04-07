@@ -53,7 +53,7 @@ Test that the nodes generate the correct change address type:
 from decimal import Decimal
 import itertools
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -64,7 +64,7 @@ from test_framework.util import (
 )
 
 
-class AddressTypeTest(PigycoinTestFramework):
+class AddressTypeTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 6
         self.extra_args = [

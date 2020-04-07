@@ -4,7 +4,7 @@
 
 #include <qt/paymentserver.h>
 
-#include <qt/pigycoinunits.h>
+#include <qt/nestcoinunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 
@@ -43,15 +43,15 @@
 #include <QTextDocument>
 #include <QUrlQuery>
 
-const int PIGYCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString PIGYCOIN_IPC_PREFIX("pigycoin:");
+const int NESTCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString NESTCOIN_IPC_PREFIX("nestcoin:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/pigycoin-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/pigycoin-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/pigycoin-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/nestcoin-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/nestcoin-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/nestcoin-paymentrequest";
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -75,7 +75,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("PigycoinQt");
+    QString name("NestcoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -198,16 +198,16 @@ void PaymentServer::ipcParseCommandLine(interfaces::Node& node, int argc, char* 
         if (arg.startsWith("-"))
             continue;
 
-        // If the pigycoin: URI contains a payment request, we are not able to detect the
+        // If the nestcoin: URI contains a payment request, we are not able to detect the
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(PIGYCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // pigycoin: URI
+        if (arg.startsWith(NESTCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // nestcoin: URI
         {
             savedPaymentRequests.append(arg);
 
             SendCoinsRecipient r;
-            if (GUIUtil::parsePigycoinURI(arg, &r) && !r.address.isEmpty())
+            if (GUIUtil::parseNestcoinURI(arg, &r) && !r.address.isEmpty())
             {
                 auto tempChainParams = CreateChainParams(CBaseChainParams::MAIN);
 
@@ -260,7 +260,7 @@ bool PaymentServer::ipcSendCommandLine()
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(PIGYCOIN_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(NESTCOIN_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
             socket = nullptr;
@@ -275,7 +275,7 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(PIGYCOIN_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(NESTCOIN_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
@@ -298,7 +298,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
     GOOGLE_PROTOBUF_VERIFY_VERSION;
 
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click pigycoin: links
+    // on Mac: sent when you click nestcoin: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -315,7 +315,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start pigycoin: click-to-pay handler"));
+                tr("Cannot start nestcoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
@@ -330,7 +330,7 @@ PaymentServer::~PaymentServer()
 }
 
 //
-// OSX-specific way of handling pigycoin: URIs and PaymentRequest mime types.
+// OSX-specific way of handling nestcoin: URIs and PaymentRequest mime types.
 // Also used by paymentservertests.cpp and when opening a payment request file
 // via "Open URI..." menu entry.
 //
@@ -355,7 +355,7 @@ void PaymentServer::initNetManager()
         return;
     delete netManager;
 
-    // netManager is used to fetch paymentrequests given in pigycoin: URIs
+    // netManager is used to fetch paymentrequests given in nestcoin: URIs
     netManager = new QNetworkAccessManager(this);
 
     QNetworkProxy proxy;
@@ -395,12 +395,12 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("pigycoin://", Qt::CaseInsensitive))
+    if (s.startsWith("nestcoin://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'pigycoin://' is not a valid URI. Use 'pigycoin:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'nestcoin://' is not a valid URI. Use 'nestcoin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(PIGYCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // pigycoin: URI
+    else if (s.startsWith(NESTCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // nestcoin: URI
     {
         QUrlQuery uri((QUrl(s)));
         if (uri.hasQueryItem("r")) // payment request URI
@@ -428,7 +428,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         else // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parsePigycoinURI(s, &recipient))
+            if (GUIUtil::parseNestcoinURI(s, &recipient))
             {
                 if (!IsValidDestinationString(recipient.address.toStdString())) {
                     Q_EMIT message(tr("URI handling"), tr("Invalid payment address %1").arg(recipient.address),
@@ -439,7 +439,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Pigycoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Nestcoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
@@ -551,7 +551,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
             addresses.append(QString::fromStdString(EncodeDestination(dest)));
         }
         else if (!recipient.authenticatedMerchant.isEmpty()) {
-            // Unauthenticated payment requests to custom pigycoin addresses are not supported
+            // Unauthenticated payment requests to custom nestcoin addresses are not supported
             // (there is no good way to tell the user where they are paying in a way they'd
             // have a chance of understanding).
             Q_EMIT message(tr("Payment request rejected"),
@@ -560,7 +560,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
             return false;
         }
 
-        // Pigycoin amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
+        // Nestcoin amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
         // but CAmount is defined as int64_t. Because of that we need to verify that amounts are in a valid range
         // and no overflow has happened.
         if (!verifyAmount(sendingTo.second)) {
@@ -572,7 +572,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
         CTxOut txOut(sendingTo.second, sendingTo.first);
         if (IsDust(txOut, optionsModel->node().getDustRelayFee())) {
             Q_EMIT message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (considered dust).")
-                .arg(PigycoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
+                .arg(NestcoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
                 CClientUIInterface::MSG_ERROR);
 
             return false;

@@ -1,7 +1,7 @@
-Win32, Linux, MacOSX and source releases for pigycoin v0.3.23 have been uploaded to
-https://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.3.23/
+Win32, Linux, MacOSX and source releases for nestcoin v0.3.23 have been uploaded to
+https://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.3.23/
 
-This is another quick bugfix release, trying to deal with the influx of new pigycoin users.
+This is another quick bugfix release, trying to deal with the influx of new nestcoin users.
 
 Main items of note:
 

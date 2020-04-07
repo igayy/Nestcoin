@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_TEST_PAYMENTREQUESTDATA_H
-#define PIGYCOIN_QT_TEST_PAYMENTREQUESTDATA_H
+#ifndef NESTCOIN_QT_TEST_PAYMENTREQUESTDATA_H
+#define NESTCOIN_QT_TEST_PAYMENTREQUESTDATA_H
 
 //
 // Data for paymentservertests.cpp
@@ -462,4 +462,4 @@ s7WGhoR2oeePOiH8WF9rNnZYfNR9t26afph2vTTHPMQQoS6o7HeKA9RcPxbdl441\
 KuPIpNvaauPm/XqqdoQfqtj+AlQWLZF8pQeTbEU=\
 ";
 
-#endif // PIGYCOIN_QT_TEST_PAYMENTREQUESTDATA_H
+#endif // NESTCOIN_QT_TEST_PAYMENTREQUESTDATA_H

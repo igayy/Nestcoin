@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H
-#define PIGYCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H
+#ifndef NESTCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H
+#define NESTCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H
 
 #include <zmq/zmqabstractnotifier.h>
 
@@ -52,4 +52,4 @@ public:
     bool NotifyTransaction(const CTransaction &transaction) override;
 };
 
-#endif // PIGYCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H
+#endif // NESTCOIN_ZMQ_ZMQPUBLISHNOTIFIER_H

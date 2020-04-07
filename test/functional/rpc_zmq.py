@@ -4,11 +4,11 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test for the ZMQ RPC methods."""
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal
 
 
-class RPCZMQTest(PigycoinTestFramework):
+class RPCZMQTest(NestcoinTestFramework):
 
     address = "tcp://127.0.0.1:28332"
 
@@ -18,7 +18,7 @@ class RPCZMQTest(PigycoinTestFramework):
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
-        self.skip_if_no_pigycoind_zmq()
+        self.skip_if_no_nestcoind_zmq()
 
     def run_test(self):
         self._test_getzmqnotifications()

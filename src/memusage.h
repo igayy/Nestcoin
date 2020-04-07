@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_MEMUSAGE_H
-#define PIGYCOIN_MEMUSAGE_H
+#ifndef NESTCOIN_MEMUSAGE_H
+#define NESTCOIN_MEMUSAGE_H
 
 #include <indirectmap.h>
 
@@ -167,4 +167,4 @@ static inline size_t DynamicUsage(const std::unordered_map<X, Y, Z>& m)
 
 }
 
-#endif // PIGYCOIN_MEMUSAGE_H
+#endif // NESTCOIN_MEMUSAGE_H

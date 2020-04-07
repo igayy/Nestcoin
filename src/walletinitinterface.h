@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLETINITINTERFACE_H
-#define PIGYCOIN_WALLETINITINTERFACE_H
+#ifndef NESTCOIN_WALLETINITINTERFACE_H
+#define NESTCOIN_WALLETINITINTERFACE_H
 
 #include <string>
 
@@ -34,4 +34,4 @@ public:
     virtual ~WalletInitInterface() {}
 };
 
-#endif // PIGYCOIN_WALLETINITINTERFACE_H
+#endif // NESTCOIN_WALLETINITINTERFACE_H

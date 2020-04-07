@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_CLIENT_H
-#define PIGYCOIN_RPC_CLIENT_H
+#ifndef NESTCOIN_RPC_CLIENT_H
+#define NESTCOIN_RPC_CLIENT_H
 
 #include <univalue.h>
 
@@ -19,4 +19,4 @@ UniValue RPCConvertNamedValues(const std::string& strMethod, const std::vector<s
  */
 UniValue ParseNonRFCJSONValue(const std::string& strVal);
 
-#endif // PIGYCOIN_RPC_CLIENT_H
+#endif // NESTCOIN_RPC_CLIENT_H

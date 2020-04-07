@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CRYPTO_COMMON_H
-#define PIGYCOIN_CRYPTO_COMMON_H
+#ifndef NESTCOIN_CRYPTO_COMMON_H
+#define NESTCOIN_CRYPTO_COMMON_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <stdint.h>
@@ -100,4 +100,4 @@ uint64_t static inline CountBits(uint64_t x)
     return ret;
 }
 
-#endif // PIGYCOIN_CRYPTO_COMMON_H
+#endif // NESTCOIN_CRYPTO_COMMON_H

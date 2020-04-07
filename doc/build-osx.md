@@ -38,17 +38,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
 
-Build Pigycoin Core
+Build Nestcoin Core
 ------------------------
 
-1. Clone the Pigycoin Core source code and cd into `pigycoin`
+1. Clone the Nestcoin Core source code and cd into `nestcoin`
 
-        git clone https://github.com/pigycoin-project/pigycoin
-        cd pigycoin
+        git clone https://github.com/nestcoin-project/nestcoin
+        cd nestcoin
 
-2.  Build Pigycoin Core:
+2.  Build Nestcoin Core:
 
-    Configure and build the headless Pigycoin Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Nestcoin Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -70,37 +70,37 @@ Build Pigycoin Core
 
     or
 
-        cd ~/pigycoin/src
-        cp pigycoind /usr/local/bin/
-        cp pigycoin-cli /usr/local/bin/
+        cd ~/nestcoin/src
+        cp nestcoind /usr/local/bin/
+        cp nestcoin-cli /usr/local/bin/
 
 Running
 -------
 
-Pigycoin Core is now available at `./src/pigycoind`
+Nestcoin Core is now available at `./src/nestcoind`
 
 Before running, it's recommended that you create an RPC configuration file.
 
-    echo -e "rpcuser=pigycoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Pigycoin/pigycoin.conf"
+    echo -e "rpcuser=nestcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Nestcoin/nestcoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Pigycoin/pigycoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Nestcoin/nestcoin.conf"
 
-The first time you run pigycoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run nestcoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Pigycoin/debug.log
+    tail -f $HOME/Library/Application\ Support/Nestcoin/debug.log
 
 Other commands:
 -------
 
-    ./src/pigycoind -daemon # Starts the pigycoin daemon.
-    ./src/pigycoin-cli --help # Outputs a list of command-line options.
-    ./src/pigycoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/nestcoind -daemon # Starts the nestcoin daemon.
+    ./src/nestcoin-cli --help # Outputs a list of command-line options.
+    ./src/nestcoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Notes
 -----
 
 * Tested on OS X 10.10 Yosemite through macOS 10.13 High Sierra on 64-bit Intel processors only.
 
-* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/pigycoin/pigycoin/issues/7714)
+* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/nestcoin/nestcoin/issues/7714)

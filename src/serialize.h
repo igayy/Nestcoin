@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SERIALIZE_H
-#define PIGYCOIN_SERIALIZE_H
+#ifndef NESTCOIN_SERIALIZE_H
+#define NESTCOIN_SERIALIZE_H
 
 #include <compat/endian.h>
 
@@ -999,4 +999,4 @@ size_t GetSerializeSizeMany(const S& s, const T&... t)
     return sc.size();
 }
 
-#endif // PIGYCOIN_SERIALIZE_H
+#endif // NESTCOIN_SERIALIZE_H

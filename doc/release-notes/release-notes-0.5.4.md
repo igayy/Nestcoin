@@ -1,14 +1,14 @@
-Pigycoin version 0.5.4 is now available for download at:
-http://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.5.4/
+Nestcoin version 0.5.4 is now available for download at:
+http://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.5.4/
 NOTE: 0.5.4rc3 is being renamed to 0.5.4 final with no changes.
 
 This is a bugfix-only release in the 0.5.x series, plus a few protocol updates.
 
 Please report bugs using the issue tracker at github:
-https://github.com/pigycoin/pigycoin/issues
+https://github.com/nestcoin/nestcoin/issues
 
 Stable source code is hosted at Gitorious:
-http://gitorious.org/pigycoin/pigycoind-stable/archive-tarball/v0.5.4#.tar.gz
+http://gitorious.org/nestcoin/nestcoind-stable/archive-tarball/v0.5.4#.tar.gz
 
 PROTOCOL UPDATES
 
@@ -22,8 +22,8 @@ Fix broken testnet mining.
 Stop excess inventory relay during initial block download.
 When disconnecting a node, clear the received buffer so that we do not process any already received messages.
 Yet another attempt at implementing "minimize to tray" that works on all operating systems.
-Fix Pigycoin-Qt notifications under Growl 1.3.
-Increase required age of Pigycoin-Qt's "not up to date" status from 30 to 90 minutes.
+Fix Nestcoin-Qt notifications under Growl 1.3.
+Increase required age of Nestcoin-Qt's "not up to date" status from 30 to 90 minutes.
 Implemented missing verifications that led to crash on entering some wrong passphrases for encrypted wallets.
 Fix default filename suffixes in GNOME save dialog.
 Make the "Send coins" tab use the configured unit type, even on the first attempt.
@@ -31,7 +31,7 @@ Print detailed wallet loading errors to debug.log when it is corrupt.
 Allocate exactly the amount of space needed for signing transactions, instead of a fixed 10k buffer.
 Workaround for improbable memory access violation.
 Check wallet's minimum version before trying to load it.
-Remove wxPigycoin properly when installing Pigycoin-Qt over it. (Windows)
+Remove wxNestcoin properly when installing Nestcoin-Qt over it. (Windows)
 Detail reorganization information better in debug log.
 Use a messagebox to display the error when -server is provided without configuring a RPC password.
 Testing suite build now honours provided CXXFLAGS.

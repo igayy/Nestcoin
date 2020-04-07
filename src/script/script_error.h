@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SCRIPT_SCRIPT_ERROR_H
-#define PIGYCOIN_SCRIPT_SCRIPT_ERROR_H
+#ifndef NESTCOIN_SCRIPT_SCRIPT_ERROR_H
+#define NESTCOIN_SCRIPT_SCRIPT_ERROR_H
 
 typedef enum ScriptError_t
 {
@@ -75,4 +75,4 @@ typedef enum ScriptError_t
 
 const char* ScriptErrorString(const ScriptError error);
 
-#endif // PIGYCOIN_SCRIPT_SCRIPT_ERROR_H
+#endif // NESTCOIN_SCRIPT_SCRIPT_ERROR_H

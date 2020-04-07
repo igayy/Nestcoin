@@ -1,41 +1,41 @@
-Pigycoin Core
+Nestcoin Core
 =============
 
 Setup
 ---------------------
-Pigycoin Core is the original Pigycoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Pigycoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Nestcoin Core is the original Nestcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Nestcoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Pigycoin Core, visit [pigycoin.org](https://pigycoin.org).
+To download Nestcoin Core, visit [nestcoin.org](https://nestcoin.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Pigycoin Core on your native platform.
+The following are some helpful notes on how to run Nestcoin Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/pigycoin-qt` (GUI) or
-- `bin/pigycoind` (headless)
+- `bin/nestcoin-qt` (GUI) or
+- `bin/nestcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run pigycoin-qt.exe.
+Unpack the files into a directory, and then run nestcoin-qt.exe.
 
 ### macOS
 
-Drag Pigycoin Core to your applications folder, and then run Pigycoin Core.
+Drag Nestcoin Core to your applications folder, and then run Nestcoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Pigycoin Wiki](https://pigycoin.info/)
+* See the documentation at the [Nestcoin Wiki](https://nestcoin.info/)
 for help and more information.
-* Ask for help on [#pigycoin](http://webchat.freenode.net?channels=pigycoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=pigycoin).
-* Ask for help on the [PigycoinTalk](https://pigycointalk.io/) forums.
+* Ask for help on [#nestcoin](http://webchat.freenode.net?channels=nestcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=nestcoin).
+* Ask for help on the [NestcoinTalk](https://nestcointalk.io/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Pigycoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Nestcoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -47,7 +47,7 @@ The following are developer notes on how to build Pigycoin Core on your native p
 
 Development
 ---------------------
-The Pigycoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Nestcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -62,8 +62,8 @@ The Pigycoin repo's [root README](/README.md) contains relevant information on t
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [PigycoinTalk](https://pigycointalk.io/) forums.
-* Discuss general Pigycoin development on #pigycoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=pigycoin-dev).
+* Discuss on the [NestcoinTalk](https://nestcointalk.io/) forums.
+* Discuss general Nestcoin development on #nestcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=nestcoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

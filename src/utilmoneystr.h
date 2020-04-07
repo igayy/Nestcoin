@@ -1,13 +1,13 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Money parsing/formatting utilities.
  */
-#ifndef PIGYCOIN_UTILMONEYSTR_H
-#define PIGYCOIN_UTILMONEYSTR_H
+#ifndef NESTCOIN_UTILMONEYSTR_H
+#define NESTCOIN_UTILMONEYSTR_H
 
 #include <stdint.h>
 #include <string>
@@ -21,4 +21,4 @@ std::string FormatMoney(const CAmount& n);
 bool ParseMoney(const std::string& str, CAmount& nRet);
 bool ParseMoney(const char* pszIn, CAmount& nRet);
 
-#endif // PIGYCOIN_UTILMONEYSTR_H
+#endif // NESTCOIN_UTILMONEYSTR_H

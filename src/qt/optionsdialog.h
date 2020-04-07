@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_OPTIONSDIALOG_H
-#define PIGYCOIN_QT_OPTIONSDIALOG_H
+#ifndef NESTCOIN_QT_OPTIONSDIALOG_H
+#define NESTCOIN_QT_OPTIONSDIALOG_H
 
 #include <QDialog>
 #include <QValidator>
@@ -47,7 +47,7 @@ private Q_SLOTS:
     /* set OK button state (enabled / disabled) */
     void setOkButtonState(bool fState);
     void on_resetButton_clicked();
-    void on_openPigycoinConfButton_clicked();
+    void on_openNestcoinConfButton_clicked();
     void on_okButton_clicked();
     void on_cancelButton_clicked();
 
@@ -69,4 +69,4 @@ private:
     QDataWidgetMapper *mapper;
 };
 
-#endif // PIGYCOIN_QT_OPTIONSDIALOG_H
+#endif // NESTCOIN_QT_OPTIONSDIALOG_H

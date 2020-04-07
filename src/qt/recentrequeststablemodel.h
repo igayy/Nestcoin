@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_RECENTREQUESTSTABLEMODEL_H
-#define PIGYCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef NESTCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#define NESTCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include <qt/walletmodel.h>
 
@@ -50,7 +50,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / pigycoin: URIs.
+/** Model for list of recently generated payment requests / nestcoin: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -102,4 +102,4 @@ private:
     QString getAmountTitle();
 };
 
-#endif // PIGYCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // NESTCOIN_QT_RECENTREQUESTSTABLEMODEL_H

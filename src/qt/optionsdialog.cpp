@@ -3,13 +3,13 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <qt/optionsdialog.h>
 #include <qt/forms/ui_optionsdialog.h>
 
-#include <qt/pigycoinunits.h>
+#include <qt/nestcoinunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 
@@ -83,10 +83,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->pigycoinAtStartup->setToolTip(ui->pigycoinAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
-    ui->pigycoinAtStartup->setText(ui->pigycoinAtStartup->text().arg(tr(PACKAGE_NAME)));
+    ui->nestcoinAtStartup->setToolTip(ui->nestcoinAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->nestcoinAtStartup->setText(ui->nestcoinAtStartup->text().arg(tr(PACKAGE_NAME)));
 
-    ui->openPigycoinConfButton->setToolTip(ui->openPigycoinConfButton->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->openNestcoinConfButton->setToolTip(ui->openNestcoinConfButton->toolTip().arg(tr(PACKAGE_NAME)));
 
     ui->lang->setToolTip(ui->lang->toolTip().arg(tr(PACKAGE_NAME)));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -108,7 +108,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     ui->thirdPartyTxUrls->setPlaceholderText("https://example.com/tx/%s");
 
-    ui->unit->setModel(new PigycoinUnits(this));
+    ui->unit->setModel(new NestcoinUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -177,7 +177,7 @@ void OptionsDialog::setModel(OptionsModel *_model)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->pigycoinAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->nestcoinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
     mapper->addMapping(ui->prune, OptionsModel::Prune);
@@ -235,7 +235,7 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_openPigycoinConfButton_clicked()
+void OptionsDialog::on_openNestcoinConfButton_clicked()
 {
     /* explain the purpose of the config file */
     QMessageBox::information(this, tr("Configuration options"),
@@ -243,7 +243,7 @@ void OptionsDialog::on_openPigycoinConfButton_clicked()
            "Additionally, any command-line options will override this configuration file."));
 
     /* show an error if there was some problem opening the file */
-    if (!GUIUtil::openPigycoinConf())
+    if (!GUIUtil::openNestcoinConf())
         QMessageBox::critical(this, tr("Error"), tr("The configuration file could not be opened."));
 }
 

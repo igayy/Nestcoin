@@ -1,5 +1,5 @@
-#ifndef PIGYCOIN_QT_TEST_UTIL_H
-#define PIGYCOIN_QT_TEST_UTIL_H
+#ifndef NESTCOIN_QT_TEST_UTIL_H
+#define NESTCOIN_QT_TEST_UTIL_H
 
 /**
  * Press "Ok" button in message box dialog.
@@ -9,4 +9,4 @@
  */
 void ConfirmMessage(QString* text = nullptr, int msec = 0);
 
-#endif // PIGYCOIN_QT_TEST_UTIL_H
+#endif // NESTCOIN_QT_TEST_UTIL_H

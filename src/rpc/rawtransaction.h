@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_RAWTRANSACTION_H
-#define PIGYCOIN_RPC_RAWTRANSACTION_H
+#ifndef NESTCOIN_RPC_RAWTRANSACTION_H
+#define NESTCOIN_RPC_RAWTRANSACTION_H
 
 class CBasicKeyStore;
 struct CMutableTransaction;
@@ -15,4 +15,4 @@ UniValue SignTransaction(CMutableTransaction& mtx, const UniValue& prevTxs, CBas
 /** Create a transaction from univalue parameters */
 CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniValue& outputs_in, const UniValue& locktime, const UniValue& rbf);
 
-#endif // PIGYCOIN_RPC_RAWTRANSACTION_H
+#endif // NESTCOIN_RPC_RAWTRANSACTION_H

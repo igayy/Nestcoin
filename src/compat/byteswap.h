@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_COMPAT_BYTESWAP_H
-#define PIGYCOIN_COMPAT_BYTESWAP_H
+#ifndef NESTCOIN_COMPAT_BYTESWAP_H
+#define NESTCOIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <stdint.h>
@@ -63,4 +63,4 @@ inline uint64_t bswap_64(uint64_t x)
 
 #endif // defined(MAC_OSX)
 
-#endif // PIGYCOIN_COMPAT_BYTESWAP_H
+#endif // NESTCOIN_COMPAT_BYTESWAP_H

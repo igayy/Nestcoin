@@ -1,5 +1,5 @@
-#ifndef PIGYCOIN_CRYPTO_SCRYPT_H
-#define PIGYCOIN_CRYPTO_SCRYPT_H
+#ifndef NESTCOIN_CRYPTO_SCRYPT_H
+#define NESTCOIN_CRYPTO_SCRYPT_H
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -46,4 +46,4 @@ static inline void le32enc(void *pp, uint32_t x)
         p[3] = (x >> 24) & 0xff;
 }
 #endif
-#endif // PIGYCOIN_CRYPTO_SCRYPT_H
+#endif // NESTCOIN_CRYPTO_SCRYPT_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_UNDO_H
-#define PIGYCOIN_UNDO_H
+#ifndef NESTCOIN_UNDO_H
+#define NESTCOIN_UNDO_H
 
 #include <compressor.h>
 #include <consensus/consensus.h>
@@ -109,4 +109,4 @@ public:
     }
 };
 
-#endif // PIGYCOIN_UNDO_H
+#endif // NESTCOIN_UNDO_H

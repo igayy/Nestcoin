@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_INDEX_BASE_H
-#define PIGYCOIN_INDEX_BASE_H
+#ifndef NESTCOIN_INDEX_BASE_H
+#define NESTCOIN_INDEX_BASE_H
 
 #include <dbwrapper.h>
 #include <primitives/block.h>
@@ -95,4 +95,4 @@ public:
     void Stop();
 };
 
-#endif // PIGYCOIN_INDEX_BASE_H
+#endif // NESTCOIN_INDEX_BASE_H

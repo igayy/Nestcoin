@@ -3,10 +3,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test wallet replace-by-fee capabilities in conjunction with the fallbackfee."""
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class WalletRBFTest(PigycoinTestFramework):
+class WalletRBFTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

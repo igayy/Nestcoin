@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_WALLETUTIL_H
-#define PIGYCOIN_WALLET_WALLETUTIL_H
+#ifndef NESTCOIN_WALLET_WALLETUTIL_H
+#define NESTCOIN_WALLET_WALLETUTIL_H
 
 #include <chainparamsbase.h>
 #include <util.h>
@@ -11,4 +11,4 @@
 //! Get the path of the wallet directory.
 fs::path GetWalletDir();
 
-#endif // PIGYCOIN_WALLET_WALLETUTIL_H
+#endif // NESTCOIN_WALLET_WALLETUTIL_H

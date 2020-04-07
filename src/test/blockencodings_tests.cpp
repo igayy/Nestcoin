@@ -8,7 +8,7 @@
 #include <pow.h>
 #include <random.h>
 
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <boost/test/unit_test.hpp>
 

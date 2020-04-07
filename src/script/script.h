@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SCRIPT_SCRIPT_H
-#define PIGYCOIN_SCRIPT_SCRIPT_H
+#ifndef NESTCOIN_SCRIPT_SCRIPT_H
+#define NESTCOIN_SCRIPT_SCRIPT_H
 
 #include <crypto/common.h>
 #include <prevector.h>
@@ -516,7 +516,7 @@ public:
     }
 
     /**
-     * Pre-version-0.6, Pigycoin always counted CHECKMULTISIGs
+     * Pre-version-0.6, Nestcoin always counted CHECKMULTISIGs
      * as 20 sigops. With pay-to-script-hash, that changed:
      * CHECKMULTISIGs serialized in scriptSigs are
      * counted more accurately, assuming they are of the form
@@ -584,4 +584,4 @@ public:
     virtual ~CReserveScript() {}
 };
 
-#endif // PIGYCOIN_SCRIPT_SCRIPT_H
+#endif // NESTCOIN_SCRIPT_SCRIPT_H

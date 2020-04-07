@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_HTTPSERVER_H
-#define PIGYCOIN_HTTPSERVER_H
+#ifndef NESTCOIN_HTTPSERVER_H
+#define NESTCOIN_HTTPSERVER_H
 
 #include <string>
 #include <stdint.h>
@@ -150,4 +150,4 @@ private:
 
 std::string urlDecode(const std::string &urlEncoded);
 
-#endif // PIGYCOIN_HTTPSERVER_H
+#endif // NESTCOIN_HTTPSERVER_H

@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test mempool persistence.
 
-By default, pigycoind will dump mempool on shutdown and
+By default, nestcoind will dump mempool on shutdown and
 then reload it on startup. This can be overridden with
 the -persistmempool=0 command line option.
 
@@ -39,10 +39,10 @@ from decimal import Decimal
 import os
 import time
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, wait_until
 
-class MempoolPersistTest(PigycoinTestFramework):
+class MempoolPersistTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [[], ["-persistmempool=0"], []]
@@ -75,7 +75,7 @@ class MempoolPersistTest(PigycoinTestFramework):
         self.start_node(1, extra_args=["-persistmempool=0"])
         self.start_node(0)
         self.start_node(2)
-        # Give pigycoind a second to reload the mempool
+        # Give nestcoind a second to reload the mempool
         wait_until(lambda: len(self.nodes[0].getrawmempool()) == 5, timeout=1)
         wait_until(lambda: len(self.nodes[2].getrawmempool()) == 5, timeout=1)
         # The others have loaded their mempool. If node_1 loaded anything, we'd probably notice by now:
@@ -88,7 +88,7 @@ class MempoolPersistTest(PigycoinTestFramework):
         self.log.debug("Stop-start node0 with -persistmempool=0. Verify that it doesn't load its mempool.dat file.")
         self.stop_nodes()
         self.start_node(0, extra_args=["-persistmempool=0"])
-        # Give pigycoind a second to reload the mempool
+        # Give nestcoind a second to reload the mempool
         time.sleep(1)
         assert_equal(len(self.nodes[0].getrawmempool()), 0)
 
@@ -110,7 +110,7 @@ class MempoolPersistTest(PigycoinTestFramework):
         self.start_node(1, extra_args=[])
         wait_until(lambda: len(self.nodes[1].getrawmempool()) == 5)
 
-        self.log.debug("Prevent pigycoind from writing mempool.dat to disk. Verify that `savemempool` fails")
+        self.log.debug("Prevent nestcoind from writing mempool.dat to disk. Verify that `savemempool` fails")
         # to test the exception we are creating a tmp folder called mempool.dat.new
         # which is an implementation detail that could change and break this test
         mempooldotnew1 = mempooldat1 + '.new'

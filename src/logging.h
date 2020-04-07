@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_LOGGING_H
-#define PIGYCOIN_LOGGING_H
+#ifndef NESTCOIN_LOGGING_H
+#define NESTCOIN_LOGGING_H
 
 #include <fs.h>
 #include <tinyformat.h>
@@ -163,4 +163,4 @@ template<typename T, typename... Args> static inline void MarkUsed(const T& t, c
 } while(0)
 #endif
 
-#endif // PIGYCOIN_LOGGING_H
+#endif // NESTCOIN_LOGGING_H

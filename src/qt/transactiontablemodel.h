@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_TRANSACTIONTABLEMODEL_H
-#define PIGYCOIN_QT_TRANSACTIONTABLEMODEL_H
+#ifndef NESTCOIN_QT_TRANSACTIONTABLEMODEL_H
+#define NESTCOIN_QT_TRANSACTIONTABLEMODEL_H
 
-#include <qt/pigycoinunits.h>
+#include <qt/nestcoinunits.h>
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -101,7 +101,7 @@ private:
     QString formatTxDate(const TransactionRecord *wtx) const;
     QString formatTxType(const TransactionRecord *wtx) const;
     QString formatTxToAddress(const TransactionRecord *wtx, bool tooltip) const;
-    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, PigycoinUnits::SeparatorStyle separators=PigycoinUnits::separatorStandard) const;
+    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, NestcoinUnits::SeparatorStyle separators=NestcoinUnits::separatorStandard) const;
     QString formatTooltip(const TransactionRecord *rec) const;
     QVariant txStatusDecoration(const TransactionRecord *wtx) const;
     QVariant txWatchonlyDecoration(const TransactionRecord *wtx) const;
@@ -120,4 +120,4 @@ public Q_SLOTS:
     friend class TransactionTablePriv;
 };
 
-#endif // PIGYCOIN_QT_TRANSACTIONTABLEMODEL_H
+#endif // NESTCOIN_QT_TRANSACTIONTABLEMODEL_H

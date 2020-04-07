@@ -8,7 +8,7 @@
 #include <script/script.h>
 #include <script/script_error.h>
 #include <script/standard.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <boost/test/unit_test.hpp>
 

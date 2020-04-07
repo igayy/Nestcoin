@@ -5,7 +5,7 @@
 #include <serialize.h>
 #include <streams.h>
 #include <hash.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <stdint.h>
 

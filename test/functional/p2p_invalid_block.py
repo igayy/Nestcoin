@@ -15,10 +15,10 @@ import copy
 from test_framework.blocktools import create_block, create_coinbase, create_tx_with_script
 from test_framework.messages import COIN
 from test_framework.mininode import P2PDataStore
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal
 
-class InvalidBlockRequestTest(PigycoinTestFramework):
+class InvalidBlockRequestTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

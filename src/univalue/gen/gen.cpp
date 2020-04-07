@@ -41,8 +41,8 @@ static void initJsonEscape()
 static void outputEscape()
 {
 	printf(	"// Automatically generated file. Do not modify.\n"
-		"#ifndef PIGYCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n"
-		"#define PIGYCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n"
+		"#ifndef NESTCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n"
+		"#define NESTCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n"
 		"static const char *escapes[256] = {\n");
 
 	for (unsigned int i = 0; i < 256; i++) {
@@ -72,7 +72,7 @@ static void outputEscape()
 	}
 
 	printf(	"};\n"
-		"#endif // PIGYCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n");
+		"#endif // NESTCOIN_UNIVALUE_UNIVALUE_ESCAPES_H\n");
 }
 
 int main (int argc, char *argv[])

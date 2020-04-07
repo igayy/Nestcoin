@@ -1,5 +1,5 @@
-#ifndef PIGYCOIN_QT_TEST_WALLETTESTS_H
-#define PIGYCOIN_QT_TEST_WALLETTESTS_H
+#ifndef NESTCOIN_QT_TEST_WALLETTESTS_H
+#define NESTCOIN_QT_TEST_WALLETTESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -12,4 +12,4 @@ private Q_SLOTS:
     void walletTests();
 };
 
-#endif // PIGYCOIN_QT_TEST_WALLETTESTS_H
+#endif // NESTCOIN_QT_TEST_WALLETTESTS_H

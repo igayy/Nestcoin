@@ -1,27 +1,27 @@
-Pigycoin Core version 0.9.1 is now available from:
+Nestcoin Core version 0.9.1 is now available from:
 
-  https://pigycoin.org/bin/0.9.1/
+  https://nestcoin.org/bin/0.9.1/
 
 This is a security update. It is recommended to upgrade to this release
 as soon as possible.
 
 It is especially important to upgrade if you currently have version
 0.9.0 installed and are using the graphical interface OR you are using
-pigycoind from any pre-0.9.1 version, and have enabled SSL for RPC and
+nestcoind from any pre-0.9.1 version, and have enabled SSL for RPC and
 have configured allowip to allow rpc connections from potentially
 hostile hosts.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/pigycoin/pigycoin/issues
+  https://github.com/nestcoin/nestcoin/issues
 
 How to Upgrade
 --------------
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/Pigycoin-Qt (on Mac) or
-pigycoind/pigycoin-qt (on Linux).
+installer (on Windows) or just copy over /Applications/Nestcoin-Qt (on Mac) or
+nestcoind/nestcoin-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you run
 0.9.1 your blockchain files will be re-indexed, which will take anywhere from 
@@ -33,7 +33,7 @@ If you are upgrading from version 0.7.2 or earlier, the first time you run
 No code changes were made between 0.9.0 and 0.9.1. Only the dependencies were changed.
 
 - Upgrade OpenSSL to 1.0.1g. This release fixes the following vulnerabilities which can
-  affect the Pigycoin Core software:
+  affect the Nestcoin Core software:
 
   - CVE-2014-0160 ("heartbleed")
     A missing bounds check in the handling of the TLS heartbeat extension can

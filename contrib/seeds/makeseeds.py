@@ -30,7 +30,7 @@ SUSPICIOUS_HOSTS = {
 PATTERN_IPV4 = re.compile(r"^((\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})):(\d+)$")
 PATTERN_IPV6 = re.compile(r"^\[([0-9a-z:]+)\]:(\d+)$")
 PATTERN_ONION = re.compile(r"^([abcdefghijklmnopqrstuvwxyz234567]{16}\.onion):(\d+)$")
-PATTERN_AGENT = re.compile(r"^(/PigycoinCore:0.14.(0|1|2|99)/|/PigycoinCore:0.15.(0|1|2|99)|/PigycoinCore:0.16.(0|1|2|99)/)$")
+PATTERN_AGENT = re.compile(r"^(/NestcoinCore:0.14.(0|1|2|99)/|/NestcoinCore:0.15.(0|1|2|99)|/NestcoinCore:0.16.(0|1|2|99)/)$")
 
 def parseline(line):
     sline = line.split()
@@ -155,7 +155,7 @@ def main():
     ips = [ip for ip in ips if PATTERN_AGENT.match(ip['agent'])]
     # Sort by availability (and use last success as tie breaker)
     ips.sort(key=lambda x: (x['uptime'], x['lastsuccess'], x['ip']), reverse=True)
-    # Filter out hosts with multiple pigycoin ports, these are likely abusive
+    # Filter out hosts with multiple nestcoin ports, these are likely abusive
     ips = filtermultiport(ips)
     # Look up ASNs and limit results, both per ASN and globally.
     ips = filterbyasn(ips, MAX_SEEDS_PER_ASN, NSEEDS)

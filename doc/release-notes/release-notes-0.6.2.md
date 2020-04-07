@@ -1,10 +1,10 @@
-Pigycoin version 0.6.2 is now available for download at:
-http://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.6.2/
+Nestcoin version 0.6.2 is now available for download at:
+http://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.6.2/
 
 This is a bug-fix and code-cleanup release, with no major new features.
 
 Please report bugs using the github issue tracker at:
-https://github.com/pigycoin/pigycoin/issues
+https://github.com/nestcoin/nestcoin/issues
 
 
 NOTABLE CHANGES
@@ -14,7 +14,7 @@ portable to different data directories by default. If you need a
 portable blkindex.dat file then run with the new -detachdb=1 option
 or the "Detach databases at shutdown" GUI preference.
 
-Fixed https://github.com/pigycoin/pigycoin/issues/1065, a bug that
+Fixed https://github.com/nestcoin/nestcoin/issues/1065, a bug that
 could cause long-running nodes to crash.
 
 Mac and Windows binaries are compiled against OpenSSL 1.0.1b (Linux

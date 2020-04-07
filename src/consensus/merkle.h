@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CONSENSUS_MERKLE_H
-#define PIGYCOIN_CONSENSUS_MERKLE_H
+#ifndef NESTCOIN_CONSENSUS_MERKLE_H
+#define NESTCOIN_CONSENSUS_MERKLE_H
 
 #include <stdint.h>
 #include <vector>
@@ -26,4 +26,4 @@ uint256 BlockMerkleRoot(const CBlock& block, bool* mutated = nullptr);
  */
 uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated = nullptr);
 
-#endif // PIGYCOIN_CONSENSUS_MERKLE_H
+#endif // NESTCOIN_CONSENSUS_MERKLE_H

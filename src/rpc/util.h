@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_UTIL_H
-#define PIGYCOIN_RPC_UTIL_H
+#ifndef NESTCOIN_RPC_UTIL_H
+#define NESTCOIN_RPC_UTIL_H
 
 #include <pubkey.h>
 #include <script/standard.h>
@@ -24,4 +24,4 @@ CScript CreateMultisigRedeemscript(const int required, const std::vector<CPubKey
 
 UniValue DescribeAddress(const CTxDestination& dest);
 
-#endif // PIGYCOIN_RPC_UTIL_H
+#endif // NESTCOIN_RPC_UTIL_H

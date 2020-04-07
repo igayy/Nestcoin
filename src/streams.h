@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_STREAMS_H
-#define PIGYCOIN_STREAMS_H
+#ifndef NESTCOIN_STREAMS_H
+#define NESTCOIN_STREAMS_H
 
 #include <support/allocators/zeroafterfree.h>
 #include <serialize.h>
@@ -705,4 +705,4 @@ public:
     }
 };
 
-#endif // PIGYCOIN_STREAMS_H
+#endif // NESTCOIN_STREAMS_H

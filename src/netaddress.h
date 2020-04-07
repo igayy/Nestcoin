@@ -1,12 +1,12 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_NETADDRESS_H
-#define PIGYCOIN_NETADDRESS_H
+#ifndef NESTCOIN_NETADDRESS_H
+#define NESTCOIN_NETADDRESS_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <compat.h>
@@ -172,4 +172,4 @@ class CService : public CNetAddr
         }
 };
 
-#endif // PIGYCOIN_NETADDRESS_H
+#endif // NESTCOIN_NETADDRESS_H

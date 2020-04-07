@@ -7,7 +7,7 @@ from decimal import Decimal
 from io import BytesIO
 
 from test_framework.messages import COIN, CTransaction
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_array_result,
     assert_equal,
@@ -22,7 +22,7 @@ def tx_from_hex(hexstring):
     tx.deserialize(f)
     return tx
 
-class ListTransactionsTest(PigycoinTestFramework):
+class ListTransactionsTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.enable_mocktime()
@@ -102,7 +102,7 @@ class ListTransactionsTest(PigycoinTestFramework):
                             {"category": "receive", "amount": Decimal("0.1")},
                             {"txid": txid, "label": "watchonly"})
 
-        # Pigycoin has RBF disabled
+        # Nestcoin has RBF disabled
         # self.run_rbf_opt_in_test()
 
     # Check that the opt-in-rbf flag works properly, for sent and received

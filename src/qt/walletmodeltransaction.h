@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_WALLETMODELTRANSACTION_H
-#define PIGYCOIN_QT_WALLETMODELTRANSACTION_H
+#ifndef NESTCOIN_QT_WALLETMODELTRANSACTION_H
+#define NESTCOIN_QT_WALLETMODELTRANSACTION_H
 
 #include <qt/walletmodel.h>
 
@@ -42,4 +42,4 @@ private:
     CAmount fee;
 };
 
-#endif // PIGYCOIN_QT_WALLETMODELTRANSACTION_H
+#endif // NESTCOIN_QT_WALLETMODELTRANSACTION_H

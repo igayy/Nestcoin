@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_INTRO_H
-#define PIGYCOIN_QT_INTRO_H
+#ifndef NESTCOIN_QT_INTRO_H
+#define NESTCOIN_QT_INTRO_H
 
 #include <QDialog>
 #include <QMutex>
@@ -79,4 +79,4 @@ private:
     friend class FreespaceChecker;
 };
 
-#endif // PIGYCOIN_QT_INTRO_H
+#endif // NESTCOIN_QT_INTRO_H

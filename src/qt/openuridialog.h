@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_OPENURIDIALOG_H
-#define PIGYCOIN_QT_OPENURIDIALOG_H
+#ifndef NESTCOIN_QT_OPENURIDIALOG_H
+#define NESTCOIN_QT_OPENURIDIALOG_H
 
 #include <QDialog>
 
@@ -31,4 +31,4 @@ private:
     Ui::OpenURIDialog *ui;
 };
 
-#endif // PIGYCOIN_QT_OPENURIDIALOG_H
+#endif // NESTCOIN_QT_OPENURIDIALOG_H

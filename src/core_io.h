@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CORE_IO_H
-#define PIGYCOIN_CORE_IO_H
+#ifndef NESTCOIN_CORE_IO_H
+#define NESTCOIN_CORE_IO_H
 
 #include <amount.h>
 
@@ -37,4 +37,4 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey, UniValue& out, bool fInclud
 void ScriptToUniv(const CScript& script, UniValue& out, bool include_address);
 void TxToUniv(const CTransaction& tx, const uint256& hashBlock, UniValue& entry, bool include_hex = true, int serialize_flags = 0);
 
-#endif // PIGYCOIN_CORE_IO_H
+#endif // NESTCOIN_CORE_IO_H

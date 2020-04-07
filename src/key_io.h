@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_KEY_IO_H
-#define PIGYCOIN_KEY_IO_H
+#ifndef NESTCOIN_KEY_IO_H
+#define NESTCOIN_KEY_IO_H
 
 #include <chainparams.h>
 #include <key.h>
@@ -26,4 +26,4 @@ CTxDestination DecodeDestination(const std::string& str);
 bool IsValidDestinationString(const std::string& str);
 bool IsValidDestinationString(const std::string& str, const CChainParams& params);
 
-#endif // PIGYCOIN_KEY_IO_H
+#endif // NESTCOIN_KEY_IO_H

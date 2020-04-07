@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SCRIPT_ISMINE_H
-#define PIGYCOIN_SCRIPT_ISMINE_H
+#ifndef NESTCOIN_SCRIPT_ISMINE_H
+#define NESTCOIN_SCRIPT_ISMINE_H
 
 #include <script/standard.h>
 
@@ -27,4 +27,4 @@ typedef uint8_t isminefilter;
 isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey);
 isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest);
 
-#endif // PIGYCOIN_SCRIPT_ISMINE_H
+#endif // NESTCOIN_SCRIPT_ISMINE_H

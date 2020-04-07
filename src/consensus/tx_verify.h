@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CONSENSUS_TX_VERIFY_H
-#define PIGYCOIN_CONSENSUS_TX_VERIFY_H
+#ifndef NESTCOIN_CONSENSUS_TX_VERIFY_H
+#define NESTCOIN_CONSENSUS_TX_VERIFY_H
 
 #include <amount.h>
 
@@ -78,4 +78,4 @@ bool EvaluateSequenceLocks(const CBlockIndex& block, std::pair<int, int64_t> loc
  */
 bool SequenceLocks(const CTransaction &tx, int flags, std::vector<int>* prevHeights, const CBlockIndex& block);
 
-#endif // PIGYCOIN_CONSENSUS_TX_VERIFY_H
+#endif // NESTCOIN_CONSENSUS_TX_VERIFY_H

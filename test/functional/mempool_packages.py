@@ -7,13 +7,13 @@
 from decimal import Decimal
 
 from test_framework.messages import COIN
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, satoshi_round, sync_blocks, sync_mempools
 
 MAX_ANCESTORS = 25
 MAX_DESCENDANTS = 25
 
-class MempoolPackagesTest(PigycoinTestFramework):
+class MempoolPackagesTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.extra_args = [["-maxorphantx=1000"], ["-maxorphantx=1000", "-limitancestorcount=5"]]

@@ -1,5 +1,5 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,7 +48,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Pigycoin cannot be compiled without assertions."
+# error "Nestcoin cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -247,7 +247,7 @@ std::atomic_bool g_is_mempool_loaded{false};
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "Pigycoin Signed Message:\n";
+const std::string strMessageMagic = "Nestcoin Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -1685,7 +1685,7 @@ static bool WriteUndoDataForBlock(const CBlockUndo& blockundo, CValidationState&
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("pigycoin-scriptch");
+    RenameThread("nestcoin-scriptch");
     scriptcheckqueue.Thread();
 }
 

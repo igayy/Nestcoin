@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_RPCCONSOLE_H
-#define PIGYCOIN_QT_RPCCONSOLE_H
+#ifndef NESTCOIN_QT_RPCCONSOLE_H
+#define NESTCOIN_QT_RPCCONSOLE_H
 
 #include <qt/guiutil.h>
 #include <qt/peertablemodel.h>
@@ -32,7 +32,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Pigycoin RPC console. */
+/** Local Nestcoin RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -165,4 +165,4 @@ private:
     void updateNetworkState();
 };
 
-#endif // PIGYCOIN_QT_RPCCONSOLE_H
+#endif // NESTCOIN_QT_RPCCONSOLE_H

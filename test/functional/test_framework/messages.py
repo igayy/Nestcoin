@@ -4,11 +4,11 @@
 # Copyright (c) 2010-2018 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Pigycoin test framework primitive and message structures
+"""Nestcoin test framework primitive and message structures
 
 CBlock, CTransaction, CBlockHeader, CTxIn, CTxOut, etc....:
     data structures that should map to corresponding structures in
-    pigycoin/primitives
+    nestcoin/primitives
 
 msg_block, msg_tx, msg_headers, etc.:
     data structures that represent network messages
@@ -23,7 +23,7 @@ import socket
 import struct
 import time
 
-import pigycoin_scrypt
+import nestcoin_scrypt
 from test_framework.siphash import siphash256
 from test_framework.util import hex_str_to_bytes, bytes_to_hex_str
 
@@ -184,7 +184,7 @@ def FromHex(obj, hex_string):
 def ToHex(obj):
     return bytes_to_hex_str(obj.serialize())
 
-# Objects that map to pigycoind objects, which can be serialized/deserialized
+# Objects that map to nestcoind objects, which can be serialized/deserialized
 
 class CAddress():
     def __init__(self):
@@ -419,7 +419,7 @@ class CTransaction():
         if len(self.vin) == 0:
             flags = struct.unpack("<B", f.read(1))[0]
             # Not sure why flags can't be zero, but this
-            # matches the implementation in pigycoind
+            # matches the implementation in nestcoind
             if (flags != 0):
                 self.vin = deser_vector(f, CTxIn)
                 self.vout = deser_vector(f, CTxOut)
@@ -556,7 +556,7 @@ class CBlockHeader():
             r += struct.pack("<I", self.nNonce)
             self.sha256 = uint256_from_str(hash256(r))
             self.hash = encode(hash256(r)[::-1], 'hex_codec').decode('ascii')
-            self.scrypt256 = uint256_from_str(pigycoin_scrypt.getPoWHash(r))
+            self.scrypt256 = uint256_from_str(nestcoin_scrypt.getPoWHash(r))
 
     def rehash(self):
         self.sha256 = None
@@ -1229,7 +1229,7 @@ class msg_headers():
         self.headers = headers if headers is not None else []
 
     def deserialize(self, f):
-        # comment in pigycoind indicates these should be deserialized as blocks
+        # comment in nestcoind indicates these should be deserialized as blocks
         blocks = deser_vector(f, CBlock)
         for x in blocks:
             self.headers.append(CBlockHeader(x))

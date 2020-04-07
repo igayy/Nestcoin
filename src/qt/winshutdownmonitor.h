@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_WINSHUTDOWNMONITOR_H
-#define PIGYCOIN_QT_WINSHUTDOWNMONITOR_H
+#ifndef NESTCOIN_QT_WINSHUTDOWNMONITOR_H
+#define NESTCOIN_QT_WINSHUTDOWNMONITOR_H
 
 #ifdef WIN32
 #include <QByteArray>
@@ -24,4 +24,4 @@ public:
 };
 #endif
 
-#endif // PIGYCOIN_QT_WINSHUTDOWNMONITOR_H
+#endif // NESTCOIN_QT_WINSHUTDOWNMONITOR_H

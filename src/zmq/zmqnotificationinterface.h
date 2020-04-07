@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H
-#define PIGYCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#ifndef NESTCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#define NESTCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H
 
 #include <validationinterface.h>
 #include <string>
@@ -41,4 +41,4 @@ private:
 
 extern CZMQNotificationInterface* g_zmq_notification_interface;
 
-#endif // PIGYCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#endif // NESTCOIN_ZMQ_ZMQNOTIFICATIONINTERFACE_H

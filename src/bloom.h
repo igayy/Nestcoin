@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_BLOOM_H
-#define PIGYCOIN_BLOOM_H
+#ifndef NESTCOIN_BLOOM_H
+#define NESTCOIN_BLOOM_H
 
 #include <serialize.h>
 
@@ -140,4 +140,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // PIGYCOIN_BLOOM_H
+#endif // NESTCOIN_BLOOM_H

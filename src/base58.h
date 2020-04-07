@@ -1,5 +1,5 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
  * - E-mail usually won't line-break if there's no punctuation to break at.
  * - Double-clicking selects the whole string as one word if it's all alphanumeric.
  */
-#ifndef PIGYCOIN_BASE58_H
-#define PIGYCOIN_BASE58_H
+#ifndef NESTCOIN_BASE58_H
+#define NESTCOIN_BASE58_H
 
 #include <string>
 #include <vector>
@@ -58,4 +58,4 @@ bool DecodeBase58Check(const char* psz, std::vector<unsigned char>& vchRet);
  */
 bool DecodeBase58Check(const std::string& str, std::vector<unsigned char>& vchRet);
 
-#endif // PIGYCOIN_BASE58_H
+#endif // NESTCOIN_BASE58_H

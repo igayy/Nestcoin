@@ -1,5 +1,5 @@
 ---
-name: "pigycoin-dmg-signer"
+name: "nestcoin-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/pigycoin-project/pigycoin-detached-sigs.git"
+- "url": "https://github.com/nestcoin-project/nestcoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "pigycoin-osx-unsigned.tar.gz"
+- "nestcoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=pigycoin-osx-unsigned.tar.gz
-  SIGNED=pigycoin-osx-signed.dmg
+  UNSIGNED=nestcoin-osx-unsigned.tar.gz
+  SIGNED=nestcoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

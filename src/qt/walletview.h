@@ -2,14 +2,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_WALLETVIEW_H
-#define PIGYCOIN_QT_WALLETVIEW_H
+#ifndef NESTCOIN_QT_WALLETVIEW_H
+#define NESTCOIN_QT_WALLETVIEW_H
 
 #include <amount.h>
 
 #include <QStackedWidget>
 
-class PigycoinGUI;
+class NestcoinGUI;
 class ClientModel;
 class OverviewPage;
 class PlatformStyle;
@@ -39,14 +39,14 @@ public:
     explicit WalletView(const PlatformStyle *platformStyle, QWidget *parent);
     ~WalletView();
 
-    void setPigycoinGUI(PigycoinGUI *gui);
+    void setNestcoinGUI(NestcoinGUI *gui);
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
     */
     void setClientModel(ClientModel *clientModel);
     WalletModel *getWalletModel() { return walletModel; }
     /** Set the wallet model.
-        The wallet model represents a pigycoin wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a nestcoin wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     void setWalletModel(WalletModel *walletModel);
@@ -129,4 +129,4 @@ Q_SIGNALS:
     void outOfSyncWarningClicked();
 };
 
-#endif // PIGYCOIN_QT_WALLETVIEW_H
+#endif // NESTCOIN_QT_WALLETVIEW_H

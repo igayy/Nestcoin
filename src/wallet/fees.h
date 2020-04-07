@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_FEES_H
-#define PIGYCOIN_WALLET_FEES_H
+#ifndef NESTCOIN_WALLET_FEES_H
+#define NESTCOIN_WALLET_FEES_H
 
 #include <amount.h>
 
@@ -44,4 +44,4 @@ CFeeRate GetMinimumFeeRate(const CWallet& wallet, const CCoinControl& coin_contr
  */
 CFeeRate GetDiscardRate(const CWallet& wallet, const CBlockPolicyEstimator& estimator);
 
-#endif // PIGYCOIN_WALLET_FEES_H
+#endif // NESTCOIN_WALLET_FEES_H

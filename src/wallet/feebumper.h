@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_FEEBUMPER_H
-#define PIGYCOIN_WALLET_FEEBUMPER_H
+#ifndef NESTCOIN_WALLET_FEEBUMPER_H
+#define NESTCOIN_WALLET_FEEBUMPER_H
 
 #include <primitives/transaction.h>
 
@@ -55,4 +55,4 @@ Result CommitTransaction(CWallet* wallet,
 
 } // namespace feebumper
 
-#endif // PIGYCOIN_WALLET_FEEBUMPER_H
+#endif // NESTCOIN_WALLET_FEEBUMPER_H

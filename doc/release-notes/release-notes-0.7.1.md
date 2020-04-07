@@ -1,23 +1,23 @@
-Pigycoin version 0.7.1 is now available from:
-  http://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.7.1/
+Nestcoin version 0.7.1 is now available from:
+  http://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.7.1/
 
 This is a bug-fix minor release.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/pigycoin/pigycoin/issues
+  https://github.com/nestcoin/nestcoin/issues
 
 Project source code is hosted at github; you can get
 source-only tarballs/zipballs directly from there:
-  https://github.com/pigycoin/pigycoin/tarball/v0.7.1  # .tar.gz
-  https://github.com/pigycoin/pigycoin/zipball/v0.7.1  # .zip
+  https://github.com/nestcoin/nestcoin/tarball/v0.7.1  # .tar.gz
+  https://github.com/nestcoin/nestcoin/zipball/v0.7.1  # .zip
 
 Ubuntu Linux users can use the "Personal Package Archive" (PPA)
 maintained by Matt Corallo to automatically keep 
 up-to-date.  Just type:
-  sudo apt-add-repository ppa:pigycoin/pigycoin
+  sudo apt-add-repository ppa:nestcoin/nestcoin
   sudo apt-get update
-in your terminal, then install the pigycoin-qt package:
-  sudo apt-get install pigycoin-qt
+in your terminal, then install the nestcoin-qt package:
+  sudo apt-get install nestcoin-qt
 
 KNOWN ISSUES
 ------------
@@ -30,7 +30,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/Pigycoin-Qt (on Mac) or pigycoind/pigycoin-qt (on Linux).
+/Applications/Nestcoin-Qt (on Mac) or nestcoind/nestcoin-qt (on Linux).
 
 If you were running on Linux with a version that might have been compiled
 with a different version of Berkeley DB (for example, if you were using an
@@ -75,7 +75,7 @@ Dependency changes
 Bug fixes
 ---------
 
-* Clicking on a pigycoin: URI on Windows should now launch Pigycoin-Qt properly.
+* Clicking on a nestcoin: URI on Windows should now launch Nestcoin-Qt properly.
 
 * When running -testnet, use RPC port 18332 by default.
 

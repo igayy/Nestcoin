@@ -2,7 +2,7 @@
 #include <qt/test/util.h>
 
 #include <interfaces/node.h>
-#include <qt/pigycoinamountfield.h>
+#include <qt/nestcoinamountfield.h>
 #include <qt/callback.h>
 #include <qt/optionsmodel.h>
 #include <qt/platformstyle.h>
@@ -13,7 +13,7 @@
 #include <qt/transactionview.h>
 #include <qt/walletmodel.h>
 #include <key_io.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 #include <validation.h>
 #include <wallet/wallet.h>
 #include <qt/overviewpage.h>
@@ -59,7 +59,7 @@ uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const CTxDe
     QVBoxLayout* entries = sendCoinsDialog.findChild<QVBoxLayout*>("entries");
     SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(entries->itemAt(0)->widget());
     entry->findChild<QValidatedLineEdit*>("payTo")->setText(QString::fromStdString(EncodeDestination(address)));
-    entry->findChild<PigycoinAmountField*>("payAmount")->setValue(amount);
+    entry->findChild<NestcoinAmountField*>("payAmount")->setValue(amount);
     /* Litecon: Disabled RBF UI
     sendCoinsDialog.findChild<QFrame*>("frameFee")
         ->findChild<QFrame*>("frameFeeSelection")
@@ -90,7 +90,7 @@ QModelIndex FindTx(const QAbstractItemModel& model, const uint256& txid)
 }
 
 //! Invoke bumpfee on txid and check results.
-/* Pigycoin: Disable RBF
+/* Nestcoin: Disable RBF
 void BumpFee(TransactionView& view, const uint256& txid, bool expectDisabled, std::string expectError, bool cancel)
 {
     QTableView* table = view.findChild<QTableView*>("transactionView");
@@ -127,9 +127,9 @@ void BumpFee(TransactionView& view, const uint256& txid, bool expectDisabled, st
 //
 // This also requires overriding the default minimal Qt platform:
 //
-//     src/qt/test/test_pigycoin-qt -platform xcb      # Linux
-//     src/qt/test/test_pigycoin-qt -platform windows  # Windows
-//     src/qt/test/test_pigycoin-qt -platform cocoa    # macOS
+//     src/qt/test/test_nestcoin-qt -platform xcb      # Linux
+//     src/qt/test/test_nestcoin-qt -platform windows  # Windows
+//     src/qt/test/test_nestcoin-qt -platform cocoa    # macOS
 void TestGUI()
 {
     // Set up wallet and chain with 105 blocks (5 mature blocks for spending).
@@ -175,7 +175,7 @@ void TestGUI()
     QVERIFY(FindTx(*transactionTableModel, txid2).isValid());
 
     // Call bumpfee. Test disabled, canceled, enabled, then failing cases.
-    // Pigycoin: Disable BumpFee tests
+    // Nestcoin: Disable BumpFee tests
     // BumpFee(transactionView, txid1, true /* expect disabled */, "not BIP 125 replaceable" /* expected error */, false /* cancel */);
     // BumpFee(transactionView, txid2, false /* expect disabled */, {} /* expected error */, true /* cancel */);
     // BumpFee(transactionView, txid2, false /* expect disabled */, {} /* expected error */, false /* cancel */);
@@ -188,7 +188,7 @@ void TestGUI()
     QString balanceText = balanceLabel->text();
     int unit = walletModel.getOptionsModel()->getDisplayUnit();
     CAmount balance = walletModel.wallet().getBalance();
-    QString balanceComparison = PigycoinUnits::formatWithUnit(unit, balance, false, PigycoinUnits::separatorAlways);
+    QString balanceComparison = NestcoinUnits::formatWithUnit(unit, balance, false, NestcoinUnits::separatorAlways);
     QCOMPARE(balanceText, balanceComparison);
 
     // Check Request Payment button
@@ -201,7 +201,7 @@ void TestGUI()
     labelInput->setText("TEST_LABEL_1");
 
     // Amount input
-    PigycoinAmountField* amountInput = receiveCoinsDialog.findChild<PigycoinAmountField*>("reqAmount");
+    NestcoinAmountField* amountInput = receiveCoinsDialog.findChild<NestcoinAmountField*>("reqAmount");
     amountInput->setValue(1);
 
     // Message input
@@ -217,7 +217,7 @@ void TestGUI()
             QString paymentText = rlist->toPlainText();
             QStringList paymentTextList = paymentText.split('\n');
             QCOMPARE(paymentTextList.at(0), QString("Payment information"));
-            QVERIFY(paymentTextList.at(1).indexOf(QString("URI: pigycoin:")) != -1);
+            QVERIFY(paymentTextList.at(1).indexOf(QString("URI: nestcoin:")) != -1);
             QVERIFY(paymentTextList.at(2).indexOf(QString("Address:")) != -1);
             QCOMPARE(paymentTextList.at(3), QString("Amount: 0.00000001 ") + QString::fromStdString(CURRENCY_UNIT));
             QCOMPARE(paymentTextList.at(4), QString("Label: TEST_LABEL_1"));
@@ -255,7 +255,7 @@ void WalletTests::walletTests()
         // and fails to handle returned nulls
         // (https://bugreports.qt.io/browse/QTBUG-49686).
         QWARN("Skipping WalletTests on mac build with 'minimal' platform set due to Qt bugs. To run AppTests, invoke "
-              "with 'test_pigycoin-qt -platform cocoa' on mac, or else use a linux or windows build.");
+              "with 'test_nestcoin-qt -platform cocoa' on mac, or else use a linux or windows build.");
         return;
     }
 #endif

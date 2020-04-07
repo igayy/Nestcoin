@@ -2,7 +2,7 @@ FreeBSD build guide
 ======================
 (updated for FreeBSD 11.1)
 
-This guide describes how to build pigycoind and command-line utilities on FreeBSD.
+This guide describes how to build nestcoind and command-line utilities on FreeBSD.
 
 This guide does not contain instructions for building the GUI.
 
@@ -24,10 +24,10 @@ See [dependencies.md](dependencies.md) for a complete overview.
 
 Download the source code:
 ```
-git clone https://github.com/pigycoin-project/pigycoin
+git clone https://github.com/nestcoin-project/nestcoin
 ```
 
-## Building Pigycoin Core
+## Building Nestcoin Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

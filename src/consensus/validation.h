@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CONSENSUS_VALIDATION_H
-#define PIGYCOIN_CONSENSUS_VALIDATION_H
+#ifndef NESTCOIN_CONSENSUS_VALIDATION_H
+#define NESTCOIN_CONSENSUS_VALIDATION_H
 
 #include <string>
 #include <version.h>
@@ -107,4 +107,4 @@ static inline int64_t GetTransactionInputWeight(const CTxIn& txin)
     return ::GetSerializeSize(txin, SER_NETWORK, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) * (WITNESS_SCALE_FACTOR - 1) + ::GetSerializeSize(txin, SER_NETWORK, PROTOCOL_VERSION) + ::GetSerializeSize(txin.scriptWitness.stack, SER_NETWORK, PROTOCOL_VERSION);
 }
 
-#endif // PIGYCOIN_CONSENSUS_VALIDATION_H
+#endif // NESTCOIN_CONSENSUS_VALIDATION_H

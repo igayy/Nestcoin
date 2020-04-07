@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Pigycoin tests.
+Utilities to generate test vectors for the data-driven Nestcoin tests.
 
 Usage: 
 

@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_TXMEMPOOL_H
-#define PIGYCOIN_TXMEMPOOL_H
+#ifndef NESTCOIN_TXMEMPOOL_H
+#define NESTCOIN_TXMEMPOOL_H
 
 #include <memory>
 #include <set>
@@ -804,4 +804,4 @@ struct DisconnectedBlockTransactions {
     }
 };
 
-#endif // PIGYCOIN_TXMEMPOOL_H
+#endif // NESTCOIN_TXMEMPOOL_H

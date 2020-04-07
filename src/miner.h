@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_MINER_H
-#define PIGYCOIN_MINER_H
+#ifndef NESTCOIN_MINER_H
+#define NESTCOIN_MINER_H
 
 #include <primitives/block.h>
 #include <txmempool.h>
@@ -197,4 +197,4 @@ private:
 void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
 int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParams, const CBlockIndex* pindexPrev);
 
-#endif // PIGYCOIN_MINER_H
+#endif // NESTCOIN_MINER_H

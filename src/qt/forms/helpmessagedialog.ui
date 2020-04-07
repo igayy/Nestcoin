@@ -52,7 +52,7 @@
         </size>
        </property>
        <property name="pixmap">
-        <pixmap resource="../pigycoin.qrc">:/icons/pigycoin</pixmap>
+        <pixmap resource="../nestcoin.qrc">:/icons/nestcoin</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -150,7 +150,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../pigycoin.qrc"/>
+  <include location="../nestcoin.qrc"/>
  </resources>
  <connections>
   <connection>

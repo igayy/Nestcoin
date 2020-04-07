@@ -9,8 +9,8 @@
 //
 // For more information, see BIP 173.
 
-#ifndef PIGYCOIN_BECH32_H
-#define PIGYCOIN_BECH32_H
+#ifndef NESTCOIN_BECH32_H
+#define NESTCOIN_BECH32_H
 
 #include <stdint.h>
 #include <string>
@@ -27,4 +27,4 @@ std::pair<std::string, std::vector<uint8_t>> Decode(const std::string& str);
 
 } // namespace bech32
 
-#endif // PIGYCOIN_BECH32_H
+#endif // NESTCOIN_BECH32_H

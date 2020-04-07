@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CUCKOOCACHE_H
-#define PIGYCOIN_CUCKOOCACHE_H
+#ifndef NESTCOIN_CUCKOOCACHE_H
+#define NESTCOIN_CUCKOOCACHE_H
 
 #include <array>
 #include <algorithm>
@@ -478,4 +478,4 @@ public:
 };
 } // namespace CuckooCache
 
-#endif // PIGYCOIN_CUCKOOCACHE_H
+#endif // NESTCOIN_CUCKOOCACHE_H

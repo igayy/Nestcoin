@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_INTERFACES_NODE_H
-#define PIGYCOIN_INTERFACES_NODE_H
+#ifndef NESTCOIN_INTERFACES_NODE_H
+#define NESTCOIN_INTERFACES_NODE_H
 
 #include <addrdb.h>     // For banmap_t
 #include <amount.h>     // For CAmount
@@ -31,7 +31,7 @@ namespace interfaces {
 class Handler;
 class Wallet;
 
-//! Top-level interface for a pigycoin node (pigycoind process).
+//! Top-level interface for a nestcoin node (nestcoind process).
 class Node
 {
 public:
@@ -232,4 +232,4 @@ std::unique_ptr<Node> MakeNode();
 
 } // namespace interfaces
 
-#endif // PIGYCOIN_INTERFACES_NODE_H
+#endif // NESTCOIN_INTERFACES_NODE_H

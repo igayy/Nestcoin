@@ -4,16 +4,16 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #
-# Test new Pigycoin multisig prefix functionality.
+# Test new Nestcoin multisig prefix functionality.
 #
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_equal,
     connect_nodes,
 )
 
-class ScriptAddress2Test(PigycoinTestFramework):
+class ScriptAddress2Test(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.setup_clean_chain = False

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_INTERFACES_WALLET_H
-#define PIGYCOIN_INTERFACES_WALLET_H
+#ifndef NESTCOIN_INTERFACES_WALLET_H
+#define NESTCOIN_INTERFACES_WALLET_H
 
 #include <amount.h>                    // For CAmount
 #include <pubkey.h>                    // For CKeyID and CScriptID (definitions needed in CTxDestination instantiation)
@@ -373,4 +373,4 @@ std::unique_ptr<Wallet> MakeWallet(const std::shared_ptr<CWallet>& wallet);
 
 } // namespace interfaces
 
-#endif // PIGYCOIN_INTERFACES_WALLET_H
+#endif // NESTCOIN_INTERFACES_WALLET_H

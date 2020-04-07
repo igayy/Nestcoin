@@ -1,11 +1,11 @@
-Pigycoin-Qt version 0.8.3 is now available from:
-  http://sourceforge.net/projects/pigycoin/files/Pigycoin/pigycoin-0.8.3/
+Nestcoin-Qt version 0.8.3 is now available from:
+  http://sourceforge.net/projects/nestcoin/files/Nestcoin/nestcoin-0.8.3/
 
 This is a maintenance release to fix a denial-of-service attack that
 can cause nodes to crash.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/pigycoin/pigycoin/issues
+  https://github.com/nestcoin/nestcoin/issues
 
 0.8.3 Release notes
 

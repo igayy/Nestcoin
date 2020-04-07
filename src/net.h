@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_NET_H
-#define PIGYCOIN_NET_H
+#ifndef NESTCOIN_NET_H
+#define NESTCOIN_NET_H
 
 #include <addrdb.h>
 #include <addrman.h>
@@ -876,4 +876,4 @@ public:
 /** Return a timestamp in the future (in microseconds) for exponentially distributed events. */
 int64_t PoissonNextSend(int64_t now, int average_interval_seconds);
 
-#endif // PIGYCOIN_NET_H
+#endif // NESTCOIN_NET_H

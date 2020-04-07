@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_DB_H
-#define PIGYCOIN_WALLET_DB_H
+#ifndef NESTCOIN_WALLET_DB_H
+#define NESTCOIN_WALLET_DB_H
 
 #include <clientversion.h>
 #include <fs.h>
@@ -390,4 +390,4 @@ public:
     bool static Rewrite(BerkeleyDatabase& database, const char* pszSkip = nullptr);
 };
 
-#endif // PIGYCOIN_WALLET_DB_H
+#endif // NESTCOIN_WALLET_DB_H

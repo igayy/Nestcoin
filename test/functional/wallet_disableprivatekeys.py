@@ -5,13 +5,13 @@
 """Test disable-privatekeys mode.
 """
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_raises_rpc_error,
 )
 
 
-class DisablePrivateKeysTest(PigycoinTestFramework):
+class DisablePrivateKeysTest(NestcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = False
         self.num_nodes = 1

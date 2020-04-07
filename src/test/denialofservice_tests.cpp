@@ -14,7 +14,7 @@
 #include <util.h>
 #include <validation.h>
 
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <stdint.h>
 

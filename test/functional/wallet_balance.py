@@ -5,7 +5,7 @@
 """Test the wallet balance RPC methods."""
 from decimal import Decimal
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -37,7 +37,7 @@ def create_transactions(node, address, amt, fees):
 
     return txs
 
-class WalletTest(PigycoinTestFramework):
+class WalletTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True

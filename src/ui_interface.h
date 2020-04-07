@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_UI_INTERFACE_H
-#define PIGYCOIN_UI_INTERFACE_H
+#ifndef NESTCOIN_UI_INTERFACE_H
+#define NESTCOIN_UI_INTERFACE_H
 
 #include <memory>
 #include <stdint.h>
@@ -123,4 +123,4 @@ std::string AmountErrMsg(const char* const optname, const std::string& strValue)
 
 extern CClientUIInterface uiInterface;
 
-#endif // PIGYCOIN_UI_INTERFACE_H
+#endif // NESTCOIN_UI_INTERFACE_H

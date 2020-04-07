@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_BLOCKCHAIN_H
-#define PIGYCOIN_RPC_BLOCKCHAIN_H
+#ifndef NESTCOIN_RPC_BLOCKCHAIN_H
+#define NESTCOIN_RPC_BLOCKCHAIN_H
 
 #include <vector>
 #include <stdint.h>

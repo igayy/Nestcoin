@@ -1,13 +1,13 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef PIGYCOIN_UTILSTRENCODINGS_H
-#define PIGYCOIN_UTILSTRENCODINGS_H
+#ifndef NESTCOIN_UTILSTRENCODINGS_H
+#define NESTCOIN_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -184,4 +184,4 @@ bool ConvertBits(const O& outfn, I it, I end) {
     return true;
 }
 
-#endif // PIGYCOIN_UTILSTRENCODINGS_H
+#endif // NESTCOIN_UTILSTRENCODINGS_H

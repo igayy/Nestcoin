@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Pigycoin
+Upstream-Name: Nestcoin
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
- irc://#pigycoin@freenode.net
-Source: https://github.com/pigycoin/pigycoin
+ irc://#nestcoin@freenode.net
+Source: https://github.com/nestcoin/nestcoin
 
 Files: *
-Copyright: 2020, Pigycoin Core Developers
+Copyright: 2020, Nestcoin Core Developers
 License: Expat
-Comment: The Pigycoin Core Developers encompasses the current developers listed on pigycoin.org,
+Comment: The Nestcoin Core Developers encompasses the current developers listed on nestcoin.org,
          as well as the numerous contributors to the project.
 
 Files: debian/*
@@ -86,12 +86,12 @@ License: Expat
 Comment: Modifications of Stephan Hutchings Typicons
 
 Files: src/qt/res/icons/about.png
-       src/qt/res/icons/pigycoin.*
-       share/pixmaps/pigycoin*
-       src/qt/res/src/pigycoin.svg
+       src/qt/res/icons/nestcoin.*
+       share/pixmaps/nestcoin*
+       src/qt/res/src/nestcoin.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
-Comment: Site: https://pigycointalk.org/?topic=1756.0
+Comment: Site: https://nestcointalk.org/?topic=1756.0
 
 Files: src/qt/res/icons/proxy.png
        src/qt/res/src/proxy.svg

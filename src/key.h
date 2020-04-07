@@ -1,11 +1,11 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Copyright (c) 2017 The Zcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_KEY_H
-#define PIGYCOIN_KEY_H
+#ifndef NESTCOIN_KEY_H
+#define NESTCOIN_KEY_H
 
 #include <pubkey.h>
 #include <serialize.h>
@@ -189,4 +189,4 @@ void ECC_Stop(void);
 /** Check that required EC support is available at runtime. */
 bool ECC_InitSanityCheck(void);
 
-#endif // PIGYCOIN_KEY_H
+#endif // NESTCOIN_KEY_H

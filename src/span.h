@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SPAN_H
-#define PIGYCOIN_SPAN_H
+#ifndef NESTCOIN_SPAN_H
+#define NESTCOIN_SPAN_H
 
 #include <type_traits>
 #include <cstddef>

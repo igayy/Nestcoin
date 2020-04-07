@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_CLIENTMODEL_H
-#define PIGYCOIN_QT_CLIENTMODEL_H
+#ifndef NESTCOIN_QT_CLIENTMODEL_H
+#define NESTCOIN_QT_CLIENTMODEL_H
 
 #include <QObject>
 #include <QDateTime>
@@ -40,7 +40,7 @@ enum NumConnections {
     CONNECTIONS_ALL  = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for Pigycoin network client. */
+/** Model for Nestcoin network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -116,4 +116,4 @@ public Q_SLOTS:
     void updateBanlist();
 };
 
-#endif // PIGYCOIN_QT_CLIENTMODEL_H
+#endif // NESTCOIN_QT_CLIENTMODEL_H

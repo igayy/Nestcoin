@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,54 +13,54 @@ void URITests::uriTests()
 {
     SendCoinsRecipient rv;
     QUrl uri;
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-dontexist="));
-    QVERIFY(!GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-dontexist="));
+    QVERIFY(!GUIUtil::parseNestcoinURI(uri, &rv));
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?dontexist="));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?dontexist="));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 0);
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?label=Wikipedia Example Address"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?label=Wikipedia Example Address"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString("Wikipedia Example Address"));
     QVERIFY(rv.amount == 0);
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=0.001"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=0.001"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 100000);
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1.001"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1.001"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 100100000);
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=100&label=Wikipedia Example"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=100&label=Wikipedia Example"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.amount == 10000000000LL);
     QVERIFY(rv.label == QString("Wikipedia Example"));
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString());
 
-    QVERIFY(GUIUtil::parsePigycoinURI("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address", &rv));
+    QVERIFY(GUIUtil::parseNestcoinURI("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address", &rv));
     QVERIFY(rv.address == QString("LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2"));
     QVERIFY(rv.label == QString());
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-message=Wikipedia Example Address"));
-    QVERIFY(GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-message=Wikipedia Example Address"));
+    QVERIFY(GUIUtil::parseNestcoinURI(uri, &rv));
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000&label=Wikipedia Example"));
-    QVERIFY(!GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000&label=Wikipedia Example"));
+    QVERIFY(!GUIUtil::parseNestcoinURI(uri, &rv));
 
-    uri.setUrl(QString("pigycoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000.0&label=Wikipedia Example"));
-    QVERIFY(!GUIUtil::parsePigycoinURI(uri, &rv));
+    uri.setUrl(QString("nestcoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000.0&label=Wikipedia Example"));
+    QVERIFY(!GUIUtil::parseNestcoinURI(uri, &rv));
 }

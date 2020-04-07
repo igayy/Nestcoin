@@ -6,11 +6,11 @@
 
 import os
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.test_node import ErrorMatch
 
 
-class LoggingTest(PigycoinTestFramework):
+class LoggingTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

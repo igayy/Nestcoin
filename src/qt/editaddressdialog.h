@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_EDITADDRESSDIALOG_H
-#define PIGYCOIN_QT_EDITADDRESSDIALOG_H
+#ifndef NESTCOIN_QT_EDITADDRESSDIALOG_H
+#define NESTCOIN_QT_EDITADDRESSDIALOG_H
 
 #include <QDialog>
 
@@ -56,4 +56,4 @@ private:
     QString address;
 };
 
-#endif // PIGYCOIN_QT_EDITADDRESSDIALOG_H
+#endif // NESTCOIN_QT_EDITADDRESSDIALOG_H

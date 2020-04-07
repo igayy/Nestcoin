@@ -23,13 +23,13 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs.ltc'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/pigycoin-project/gitian.sigs.ltc.git'])
-    if not os.path.isdir('pigycoin-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/pigycoin-project/pigycoin-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/nestcoin-project/gitian.sigs.ltc.git'])
+    if not os.path.isdir('nestcoin-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/nestcoin-project/nestcoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('pigycoin'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/pigycoin-project/pigycoin.git'])
+    if not os.path.isdir('nestcoin'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/nestcoin-project/nestcoin.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
@@ -46,34 +46,34 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('pigycoin-binaries/' + args.version, exist_ok=True)
+    os.makedirs('nestcoin-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
 
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz'])
-    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://pigycoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
-    subprocess.check_call(['make', '-C', '../pigycoin/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
+    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://nestcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
+    subprocess.check_call(['make', '-C', '../nestcoin/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pigycoin='+args.commit, '--url', 'pigycoin='+args.url, '../pigycoin/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.ltc/', '../pigycoin/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/pigycoin-*.tar.gz build/out/src/pigycoin-*.tar.gz ../pigycoin-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'nestcoin='+args.commit, '--url', 'nestcoin='+args.url, '../nestcoin/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.ltc/', '../nestcoin/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call('mv build/out/nestcoin-*.tar.gz build/out/src/nestcoin-*.tar.gz ../nestcoin-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pigycoin='+args.commit, '--url', 'pigycoin='+args.url, '../pigycoin/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.ltc/', '../pigycoin/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/pigycoin-*-win-unsigned.tar.gz inputs/pigycoin-win-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/pigycoin-*.zip build/out/pigycoin-*.exe ../pigycoin-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'nestcoin='+args.commit, '--url', 'nestcoin='+args.url, '../nestcoin/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.ltc/', '../nestcoin/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call('mv build/out/nestcoin-*-win-unsigned.tar.gz inputs/nestcoin-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/nestcoin-*.zip build/out/nestcoin-*.exe ../nestcoin-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pigycoin='+args.commit, '--url', 'pigycoin='+args.url, '../pigycoin/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.ltc/', '../pigycoin/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/pigycoin-*-osx-unsigned.tar.gz inputs/pigycoin-osx-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/pigycoin-*.tar.gz build/out/pigycoin-*.dmg ../pigycoin-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'nestcoin='+args.commit, '--url', 'nestcoin='+args.url, '../nestcoin/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.ltc/', '../nestcoin/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call('mv build/out/nestcoin-*-osx-unsigned.tar.gz inputs/nestcoin-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/nestcoin-*.tar.gz build/out/nestcoin-*.dmg ../nestcoin-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -92,16 +92,16 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../pigycoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.ltc/', '../pigycoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/pigycoin-*win64-setup.exe ../pigycoin-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/pigycoin-*win32-setup.exe ../pigycoin-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../nestcoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.ltc/', '../nestcoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call('mv build/out/nestcoin-*win64-setup.exe ../nestcoin-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/nestcoin-*win32-setup.exe ../nestcoin-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../pigycoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.ltc/', '../pigycoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/pigycoin-osx-signed.dmg ../pigycoin-binaries/'+args.version+'/pigycoin-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../nestcoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.ltc/', '../nestcoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call('mv build/out/nestcoin-osx-signed.dmg ../nestcoin-binaries/'+args.version+'/nestcoin-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
@@ -118,15 +118,15 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-linux', '../pigycoin/contrib/gitian-descriptors/gitian-linux.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-linux', '../nestcoin/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-unsigned', '../pigycoin/contrib/gitian-descriptors/gitian-win.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-unsigned', '../nestcoin/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-unsigned', '../pigycoin/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-unsigned', '../nestcoin/contrib/gitian-descriptors/gitian-osx.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-signed', '../pigycoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-signed', '../nestcoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-signed', '../pigycoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-signed', '../nestcoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 
@@ -135,7 +135,7 @@ def main():
 
     parser = argparse.ArgumentParser(usage='%(prog)s [options] signer version')
     parser.add_argument('-c', '--commit', action='store_true', dest='commit', help='Indicate that the version argument is for a commit or branch')
-    parser.add_argument('-u', '--url', dest='url', default='https://github.com/pigycoin-project/pigycoin', help='Specify the URL of the repository. Default is %(default)s')
+    parser.add_argument('-u', '--url', dest='url', default='https://github.com/nestcoin-project/nestcoin', help='Specify the URL of the repository. Default is %(default)s')
     parser.add_argument('-v', '--verify', action='store_true', dest='verify', help='Verify the Gitian build')
     parser.add_argument('-b', '--build', action='store_true', dest='build', help='Do a Gitian build')
     parser.add_argument('-s', '--sign', action='store_true', dest='sign', help='Make signed binaries for Windows and MacOS')
@@ -202,7 +202,7 @@ def main():
     if args.setup:
         setup()
 
-    os.chdir('pigycoin')
+    os.chdir('nestcoin')
     subprocess.check_call(['git', 'fetch'])
     subprocess.check_call(['git', 'checkout', args.commit])
     os.chdir(workdir)

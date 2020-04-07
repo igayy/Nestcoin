@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_SCRIPT_INTERPRETER_H
-#define PIGYCOIN_SCRIPT_INTERPRETER_H
+#ifndef NESTCOIN_SCRIPT_INTERPRETER_H
+#define NESTCOIN_SCRIPT_INTERPRETER_H
 
 #include <script/script_error.h>
 #include <primitives/transaction.h>
@@ -192,4 +192,4 @@ size_t CountWitnessSigOps(const CScript& scriptSig, const CScript& scriptPubKey,
 
 int FindAndDelete(CScript& script, const CScript& b);
 
-#endif // PIGYCOIN_SCRIPT_INTERPRETER_H
+#endif // NESTCOIN_SCRIPT_INTERPRETER_H

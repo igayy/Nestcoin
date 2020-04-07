@@ -25,7 +25,7 @@ don't have test cases for.
 - Avoid wildcard imports where possible
 - Use a module-level docstring to describe what the test is testing, and how it
   is testing it.
-- When subclassing the PigycoinTestFramwork, place overrides for the
+- When subclassing the NestcoinTestFramwork, place overrides for the
   `set_test_params()`, `add_options()` and `setup_xxxx()` methods at the top of
   the subclass, then locally-defined helper methods, then the `run_test()` method.
 - Use `'{}'.format(x)` for string formatting, not `'%s' % x`.
@@ -77,12 +77,12 @@ over the network (`CBlock`, `CTransaction`, etc, along with the network-level
 wrappers for them, `msg_block`, `msg_tx`, etc).
 
 - P2P tests have two threads. One thread handles all network communication
-with the pigycoind(s) being tested in a callback-based event loop; the other
+with the nestcoind(s) being tested in a callback-based event loop; the other
 implements the test logic.
 
-- `P2PConnection` is the class used to connect to a pigycoind.  `P2PInterface`
+- `P2PConnection` is the class used to connect to a nestcoind.  `P2PInterface`
 contains the higher level logic for processing P2P payloads and connecting to
-the Pigycoin Core node application logic. For custom behaviour, subclass the
+the Nestcoin Core node application logic. For custom behaviour, subclass the
 P2PInterface object and override the callback methods.
 
 - Can be used to write tests where specific P2P protocol behavior is tested.
@@ -91,7 +91,7 @@ Examples tests are `p2p_unrequested_blocks.py`, `p2p_compactblocks.py`.
 ### test-framework modules
 
 #### [test_framework/authproxy.py](test_framework/authproxy.py)
-Taken from the [python-pigycoinrpc repository](https://github.com/jgarzik/python-pigycoinrpc).
+Taken from the [python-nestcoinrpc repository](https://github.com/jgarzik/python-nestcoinrpc).
 
 #### [test_framework/test_framework.py](test_framework/test_framework.py)
 Base class for functional tests.
@@ -100,13 +100,13 @@ Base class for functional tests.
 Generally useful functions.
 
 #### [test_framework/mininode.py](test_framework/mininode.py)
-Basic code to support P2P connectivity to a pigycoind.
+Basic code to support P2P connectivity to a nestcoind.
 
 #### [test_framework/script.py](test_framework/script.py)
-Utilities for manipulating transaction scripts (originally from python-pigycoinlib)
+Utilities for manipulating transaction scripts (originally from python-nestcoinlib)
 
 #### [test_framework/key.py](test_framework/key.py)
-Wrapper around OpenSSL EC_Key (originally from python-pigycoinlib)
+Wrapper around OpenSSL EC_Key (originally from python-nestcoinlib)
 
 #### [test_framework/bignum.py](test_framework/bignum.py)
 Helpers for script.py

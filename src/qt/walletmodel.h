@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_WALLETMODEL_H
-#define PIGYCOIN_QT_WALLETMODEL_H
+#ifndef NESTCOIN_QT_WALLETMODEL_H
+#define NESTCOIN_QT_WALLETMODEL_H
 
 #include <amount.h>
 #include <key.h>
@@ -105,7 +105,7 @@ public:
     }
 };
 
-/** Interface to Pigycoin wallet from Qt view code. */
+/** Interface to Nestcoin wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -279,4 +279,4 @@ public Q_SLOTS:
     void pollBalanceChanged();
 };
 
-#endif // PIGYCOIN_QT_WALLETMODEL_H
+#endif // NESTCOIN_QT_WALLETMODEL_H

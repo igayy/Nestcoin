@@ -6,7 +6,7 @@
 
 #include <qt/addressbookpage.h>
 #include <qt/askpassphrasedialog.h>
-#include <qt/pigycoingui.h>
+#include <qt/nestcoingui.h>
 #include <qt/clientmodel.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
@@ -88,7 +88,7 @@ WalletView::~WalletView()
 {
 }
 
-void WalletView::setPigycoinGUI(PigycoinGUI *gui)
+void WalletView::setNestcoinGUI(NestcoinGUI *gui)
 {
     if (gui)
     {

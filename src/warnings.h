@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WARNINGS_H
-#define PIGYCOIN_WARNINGS_H
+#ifndef NESTCOIN_WARNINGS_H
+#define NESTCOIN_WARNINGS_H
 
 #include <stdlib.h>
 #include <string>
@@ -21,4 +21,4 @@ void SetfLargeWorkInvalidChainFound(bool flag);
  */
 std::string GetWarnings(const std::string& strFor);
 
-#endif //  PIGYCOIN_WARNINGS_H
+#endif //  NESTCOIN_WARNINGS_H

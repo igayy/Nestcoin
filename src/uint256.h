@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_UINT256_H
-#define PIGYCOIN_UINT256_H
+#ifndef NESTCOIN_UINT256_H
+#define NESTCOIN_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -156,4 +156,4 @@ inline uint256 uint256S(const std::string& str)
     return rv;
 }
 
-#endif // PIGYCOIN_UINT256_H
+#endif // NESTCOIN_UINT256_H

@@ -1,15 +1,15 @@
-Pigycoin version 0.4.4 is now available for download at:
-http://luke.dashjr.org/programs/pigycoin/files/pigycoind-0.4.4/
+Nestcoin version 0.4.4 is now available for download at:
+http://luke.dashjr.org/programs/nestcoin/files/nestcoind-0.4.4/
 
 This is a bugfix-only release based on 0.4.0.
 
-Please note that the wxPigycoin GUI client is no longer maintained nor supported. If someone would like to step up to maintain this, they should contact Luke-Jr.
+Please note that the wxNestcoin GUI client is no longer maintained nor supported. If someone would like to step up to maintain this, they should contact Luke-Jr.
 
 Please report bugs for the daemon only using the issue tracker at github:
-https://github.com/pigycoin/pigycoin/issues
+https://github.com/nestcoin/nestcoin/issues
 
 Stable source code is hosted at Gitorious:
-http://gitorious.org/pigycoin/pigycoind-stable/archive-tarball/v0.4.4#.tar.gz
+http://gitorious.org/nestcoin/nestcoind-stable/archive-tarball/v0.4.4#.tar.gz
 
 BUG FIXES
 
@@ -24,7 +24,7 @@ Several shutdown issues have been fixed.
 Check that keys stored in the wallet are valid at startup, and if not,
 report corruption.
 Various build fixes.
-If no password is specified to pigycoind, recommend a secure password.
+If no password is specified to nestcoind, recommend a secure password.
 Update hard-coded fallback seed nodes, choosing recent ones with long uptime and versions at least 0.4.0.
 Add checkpoint at block 168,000.
 

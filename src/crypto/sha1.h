@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_CRYPTO_SHA1_H
-#define PIGYCOIN_CRYPTO_SHA1_H
+#ifndef NESTCOIN_CRYPTO_SHA1_H
+#define NESTCOIN_CRYPTO_SHA1_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -25,4 +25,4 @@ public:
     CSHA1& Reset();
 };
 
-#endif // PIGYCOIN_CRYPTO_SHA1_H
+#endif // NESTCOIN_CRYPTO_SHA1_H

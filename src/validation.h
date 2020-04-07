@@ -1,13 +1,13 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_VALIDATION_H
-#define PIGYCOIN_VALIDATION_H
+#ifndef NESTCOIN_VALIDATION_H
+#define NESTCOIN_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/pigycoin-config.h>
+#include <config/nestcoin-config.h>
 #endif
 
 #include <amount.h>
@@ -500,4 +500,4 @@ inline bool IsBlockPruned(const CBlockIndex* pblockindex)
     return (fHavePruned && !(pblockindex->nStatus & BLOCK_HAVE_DATA) && pblockindex->nTx > 0);
 }
 
-#endif // PIGYCOIN_VALIDATION_H
+#endif // NESTCOIN_VALIDATION_H

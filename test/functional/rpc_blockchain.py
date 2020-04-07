@@ -22,7 +22,7 @@ from decimal import Decimal
 import http.client
 import subprocess
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -44,7 +44,7 @@ from test_framework.mininode import (
 )
 
 
-class BlockchainTest(PigycoinTestFramework):
+class BlockchainTest(NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

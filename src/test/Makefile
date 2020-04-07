@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. pigycoin_test
+	$(MAKE) -C .. nestcoin_test
 clean:
-	$(MAKE) -C .. pigycoin_test_clean
+	$(MAKE) -C .. nestcoin_test_clean
 check:
-	$(MAKE) -C .. pigycoin_test_check
+	$(MAKE) -C .. nestcoin_test_check

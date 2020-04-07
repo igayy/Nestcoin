@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_POLICY_POLICY_H
-#define PIGYCOIN_POLICY_POLICY_H
+#ifndef NESTCOIN_POLICY_POLICY_H
+#define NESTCOIN_POLICY_POLICY_H
 
 #include <consensus/consensus.h>
 #include <policy/feerate.h>
@@ -107,4 +107,4 @@ int64_t GetVirtualTransactionSize(int64_t nWeight, int64_t nSigOpCost);
 int64_t GetVirtualTransactionSize(const CTransaction& tx, int64_t nSigOpCost = 0);
 int64_t GetVirtualTransactionInputSize(const CTxIn& tx, int64_t nSigOpCost = 0);
 
-#endif // PIGYCOIN_POLICY_POLICY_H
+#endif // NESTCOIN_POLICY_POLICY_H

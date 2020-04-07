@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_RPC_REGISTER_H
-#define PIGYCOIN_RPC_REGISTER_H
+#ifndef NESTCOIN_RPC_REGISTER_H
+#define NESTCOIN_RPC_REGISTER_H
 
 /** These are in one header file to avoid creating tons of single-function
  * headers for everything under src/rpc/ */
@@ -29,4 +29,4 @@ static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
     RegisterRawTransactionRPCCommands(t);
 }
 
-#endif // PIGYCOIN_RPC_REGISTER_H
+#endif // NESTCOIN_RPC_REGISTER_H

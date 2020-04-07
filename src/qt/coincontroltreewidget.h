@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_COINCONTROLTREEWIDGET_H
-#define PIGYCOIN_QT_COINCONTROLTREEWIDGET_H
+#ifndef NESTCOIN_QT_COINCONTROLTREEWIDGET_H
+#define NESTCOIN_QT_COINCONTROLTREEWIDGET_H
 
 #include <QKeyEvent>
 #include <QTreeWidget>
@@ -19,4 +19,4 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event);
 };
 
-#endif // PIGYCOIN_QT_COINCONTROLTREEWIDGET_H
+#endif // NESTCOIN_QT_COINCONTROLTREEWIDGET_H

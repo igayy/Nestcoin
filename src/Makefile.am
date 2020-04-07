@@ -19,42 +19,42 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-PIGYCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+NESTCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-PIGYCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
-PIGYCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+NESTCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
+NESTCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBPIGYCOIN_SERVER=libpigycoin_server.a
-LIBPIGYCOIN_COMMON=libpigycoin_common.a
-LIBPIGYCOIN_CONSENSUS=libpigycoin_consensus.a
-LIBPIGYCOIN_CLI=libpigycoin_cli.a
-LIBPIGYCOIN_UTIL=libpigycoin_util.a
-LIBPIGYCOIN_CRYPTO_BASE=crypto/libpigycoin_crypto_base.a
-LIBPIGYCOINQT=qt/libpigycoinqt.a
+LIBNESTCOIN_SERVER=libnestcoin_server.a
+LIBNESTCOIN_COMMON=libnestcoin_common.a
+LIBNESTCOIN_CONSENSUS=libnestcoin_consensus.a
+LIBNESTCOIN_CLI=libnestcoin_cli.a
+LIBNESTCOIN_UTIL=libnestcoin_util.a
+LIBNESTCOIN_CRYPTO_BASE=crypto/libnestcoin_crypto_base.a
+LIBNESTCOINQT=qt/libnestcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBPIGYCOIN_ZMQ=libpigycoin_zmq.a
+LIBNESTCOIN_ZMQ=libnestcoin_zmq.a
 endif
-if BUILD_PIGYCOIN_LIBS
-LIBPIGYCOINCONSENSUS=libpigycoinconsensus.la
+if BUILD_NESTCOIN_LIBS
+LIBNESTCOINCONSENSUS=libnestcoinconsensus.la
 endif
 if ENABLE_WALLET
-LIBPIGYCOIN_WALLET=libpigycoin_wallet.a
+LIBNESTCOIN_WALLET=libnestcoin_wallet.a
 endif
 
-LIBPIGYCOIN_CRYPTO= $(LIBPIGYCOIN_CRYPTO_BASE)
+LIBNESTCOIN_CRYPTO= $(LIBNESTCOIN_CRYPTO_BASE)
 if ENABLE_SSE41
-LIBPIGYCOIN_CRYPTO_SSE41 = crypto/libpigycoin_crypto_sse41.a
-LIBPIGYCOIN_CRYPTO += $(LIBPIGYCOIN_CRYPTO_SSE41)
+LIBNESTCOIN_CRYPTO_SSE41 = crypto/libnestcoin_crypto_sse41.a
+LIBNESTCOIN_CRYPTO += $(LIBNESTCOIN_CRYPTO_SSE41)
 endif
 if ENABLE_AVX2
-LIBPIGYCOIN_CRYPTO_AVX2 = crypto/libpigycoin_crypto_avx2.a
-LIBPIGYCOIN_CRYPTO += $(LIBPIGYCOIN_CRYPTO_AVX2)
+LIBNESTCOIN_CRYPTO_AVX2 = crypto/libnestcoin_crypto_avx2.a
+LIBNESTCOIN_CRYPTO += $(LIBNESTCOIN_CRYPTO_AVX2)
 endif
 if ENABLE_SHANI
-LIBPIGYCOIN_CRYPTO_SHANI = crypto/libpigycoin_crypto_shani.a
-LIBPIGYCOIN_CRYPTO += $(LIBPIGYCOIN_CRYPTO_SHANI)
+LIBNESTCOIN_CRYPTO_SHANI = crypto/libnestcoin_crypto_shani.a
+LIBNESTCOIN_CRYPTO += $(LIBNESTCOIN_CRYPTO_SHANI)
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
@@ -63,33 +63,33 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(w
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBPIGYCOIN_CRYPTO) \
-  $(LIBPIGYCOIN_UTIL) \
-  $(LIBPIGYCOIN_COMMON) \
-  $(LIBPIGYCOIN_CONSENSUS) \
-  $(LIBPIGYCOIN_SERVER) \
-  $(LIBPIGYCOIN_CLI) \
-  $(LIBPIGYCOIN_WALLET) \
-  $(LIBPIGYCOIN_ZMQ)
+  $(LIBNESTCOIN_CRYPTO) \
+  $(LIBNESTCOIN_UTIL) \
+  $(LIBNESTCOIN_COMMON) \
+  $(LIBNESTCOIN_CONSENSUS) \
+  $(LIBNESTCOIN_SERVER) \
+  $(LIBNESTCOIN_CLI) \
+  $(LIBNESTCOIN_WALLET) \
+  $(LIBNESTCOIN_ZMQ)
 
-lib_LTLIBRARIES = $(LIBPIGYCOINCONSENSUS)
+lib_LTLIBRARIES = $(LIBNESTCOINCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_PIGYCOIND
-  bin_PROGRAMS += pigycoind
+if BUILD_NESTCOIND
+  bin_PROGRAMS += nestcoind
 endif
 
-if BUILD_PIGYCOIN_UTILS
-  bin_PROGRAMS += pigycoin-cli pigycoin-tx
+if BUILD_NESTCOIN_UTILS
+  bin_PROGRAMS += nestcoin-cli nestcoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# pigycoin core #
-PIGYCOIN_CORE_H = \
+# nestcoin core #
+NESTCOIN_CORE_H = \
   addrdb.h \
   addrman.h \
   base58.h \
@@ -209,12 +209,12 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libpigycoin_util_a-clientversion.$(OBJEXT): obj/build.h
+libnestcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between pigycoind and pigycoin-qt
-libpigycoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libpigycoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_server_a_SOURCES = \
+# server: shared between nestcoind and nestcoin-qt
+libnestcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libnestcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_server_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   bloom.cpp \
@@ -256,12 +256,12 @@ libpigycoin_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(PIGYCOIN_CORE_H)
+  $(NESTCOIN_CORE_H)
 
 if ENABLE_ZMQ
-libpigycoin_zmq_a_CPPFLAGS = $(PIGYCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libpigycoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_zmq_a_SOURCES = \
+libnestcoin_zmq_a_CPPFLAGS = $(NESTCOIN_INCLUDES) $(ZMQ_CFLAGS)
+libnestcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp \
@@ -269,11 +269,11 @@ libpigycoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between pigycoind and pigycoin-qt, but only linked
+# wallet: shared between nestcoind and nestcoin-qt, but only linked
 # when wallet enabled
-libpigycoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-libpigycoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_wallet_a_SOURCES = \
+libnestcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+libnestcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_wallet_a_SOURCES = \
   interfaces/wallet.cpp \
   wallet/coincontrol.cpp \
   wallet/crypter.cpp \
@@ -287,12 +287,12 @@ libpigycoin_wallet_a_SOURCES = \
   wallet/walletdb.cpp \
   wallet/walletutil.cpp \
   wallet/coinselection.cpp \
-  $(PIGYCOIN_CORE_H)
+  $(NESTCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libpigycoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS) $(SSL_CFLAGS)
-crypto_libpigycoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libpigycoin_crypto_base_a_SOURCES = \
+crypto_libnestcoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS) $(SSL_CFLAGS)
+crypto_libnestcoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libnestcoin_crypto_base_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/chacha20.h \
@@ -315,31 +315,31 @@ crypto_libpigycoin_crypto_base_a_SOURCES = \
   crypto/sha512.h
 
 if USE_ASM
-crypto_libpigycoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
+crypto_libnestcoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
-crypto_libpigycoin_crypto_sse41_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libpigycoin_crypto_sse41_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libpigycoin_crypto_sse41_a_CXXFLAGS += $(SSE41_CXXFLAGS)
-crypto_libpigycoin_crypto_sse41_a_CPPFLAGS += -DENABLE_SSE41
-crypto_libpigycoin_crypto_sse41_a_SOURCES = crypto/sha256_sse41.cpp
+crypto_libnestcoin_crypto_sse41_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libnestcoin_crypto_sse41_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libnestcoin_crypto_sse41_a_CXXFLAGS += $(SSE41_CXXFLAGS)
+crypto_libnestcoin_crypto_sse41_a_CPPFLAGS += -DENABLE_SSE41
+crypto_libnestcoin_crypto_sse41_a_SOURCES = crypto/sha256_sse41.cpp
 
-crypto_libpigycoin_crypto_avx2_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libpigycoin_crypto_avx2_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libpigycoin_crypto_avx2_a_CXXFLAGS += $(AVX2_CXXFLAGS)
-crypto_libpigycoin_crypto_avx2_a_CPPFLAGS += -DENABLE_AVX2
-crypto_libpigycoin_crypto_avx2_a_SOURCES = crypto/sha256_avx2.cpp
+crypto_libnestcoin_crypto_avx2_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libnestcoin_crypto_avx2_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libnestcoin_crypto_avx2_a_CXXFLAGS += $(AVX2_CXXFLAGS)
+crypto_libnestcoin_crypto_avx2_a_CPPFLAGS += -DENABLE_AVX2
+crypto_libnestcoin_crypto_avx2_a_SOURCES = crypto/sha256_avx2.cpp
 
-crypto_libpigycoin_crypto_shani_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libpigycoin_crypto_shani_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libpigycoin_crypto_shani_a_CXXFLAGS += $(SHANI_CXXFLAGS)
-crypto_libpigycoin_crypto_shani_a_CPPFLAGS += -DENABLE_SHANI
-crypto_libpigycoin_crypto_shani_a_SOURCES = crypto/sha256_shani.cpp
+crypto_libnestcoin_crypto_shani_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libnestcoin_crypto_shani_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libnestcoin_crypto_shani_a_CXXFLAGS += $(SHANI_CXXFLAGS)
+crypto_libnestcoin_crypto_shani_a_CPPFLAGS += -DENABLE_SHANI
+crypto_libnestcoin_crypto_shani_a_SOURCES = crypto/sha256_shani.cpp
 
 # consensus: shared between all executables that validate any consensus rules.
-libpigycoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-libpigycoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_consensus_a_SOURCES = \
+libnestcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+libnestcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -356,7 +356,7 @@ libpigycoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/pigycoinconsensus.cpp \
+  script/nestcoinconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -372,10 +372,10 @@ libpigycoin_consensus_a_SOURCES = \
   utilstrencodings.h \
   version.h
 
-# common: shared between pigycoind, and pigycoin-qt and non-server tools
-libpigycoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-libpigycoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_common_a_SOURCES = \
+# common: shared between nestcoind, and nestcoin-qt and non-server tools
+libnestcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+libnestcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
   chainparams.cpp \
@@ -396,14 +396,14 @@ libpigycoin_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(PIGYCOIN_CORE_H)
+  $(NESTCOIN_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libpigycoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-libpigycoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_util_a_SOURCES = \
+libnestcoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+libnestcoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -423,102 +423,102 @@ libpigycoin_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(PIGYCOIN_CORE_H)
+  $(NESTCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libpigycoin_util_a_SOURCES += compat/glibc_compat.cpp
+libnestcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between pigycoin-cli and pigycoin-qt
-libpigycoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-libpigycoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libpigycoin_cli_a_SOURCES = \
+# cli: shared between nestcoin-cli and nestcoin-qt
+libnestcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+libnestcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoin_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(PIGYCOIN_CORE_H)
+  $(NESTCOIN_CORE_H)
 
-nodist_libpigycoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libnestcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# pigycoind binary #
-pigycoind_SOURCES = pigycoind.cpp
-pigycoind_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-pigycoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pigycoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nestcoind binary #
+nestcoind_SOURCES = nestcoind.cpp
+nestcoind_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+nestcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nestcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pigycoind_SOURCES += pigycoind-res.rc
+nestcoind_SOURCES += nestcoind-res.rc
 endif
 
-pigycoind_LDADD = \
-  $(LIBPIGYCOIN_SERVER) \
-  $(LIBPIGYCOIN_WALLET) \
-  $(LIBPIGYCOIN_COMMON) \
+nestcoind_LDADD = \
+  $(LIBNESTCOIN_SERVER) \
+  $(LIBNESTCOIN_WALLET) \
+  $(LIBNESTCOIN_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBPIGYCOIN_UTIL) \
-  $(LIBPIGYCOIN_ZMQ) \
-  $(LIBPIGYCOIN_CONSENSUS) \
-  $(LIBPIGYCOIN_CRYPTO) \
+  $(LIBNESTCOIN_UTIL) \
+  $(LIBNESTCOIN_ZMQ) \
+  $(LIBNESTCOIN_CONSENSUS) \
+  $(LIBNESTCOIN_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-pigycoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+nestcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# pigycoin-cli binary #
-pigycoin_cli_SOURCES = pigycoin-cli.cpp
-pigycoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES) $(EVENT_CFLAGS)
-pigycoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pigycoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nestcoin-cli binary #
+nestcoin_cli_SOURCES = nestcoin-cli.cpp
+nestcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES) $(EVENT_CFLAGS)
+nestcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nestcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pigycoin_cli_SOURCES += pigycoin-cli-res.rc
+nestcoin_cli_SOURCES += nestcoin-cli-res.rc
 endif
 
-pigycoin_cli_LDADD = \
-  $(LIBPIGYCOIN_CLI) \
+nestcoin_cli_LDADD = \
+  $(LIBNESTCOIN_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBPIGYCOIN_UTIL) \
-  $(LIBPIGYCOIN_CRYPTO)
+  $(LIBNESTCOIN_UTIL) \
+  $(LIBNESTCOIN_CRYPTO)
 
-pigycoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+nestcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# pigycoin-tx binary #
-pigycoin_tx_SOURCES = pigycoin-tx.cpp
-pigycoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(PIGYCOIN_INCLUDES)
-pigycoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pigycoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nestcoin-tx binary #
+nestcoin_tx_SOURCES = nestcoin-tx.cpp
+nestcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(NESTCOIN_INCLUDES)
+nestcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nestcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pigycoin_tx_SOURCES += pigycoin-tx-res.rc
+nestcoin_tx_SOURCES += nestcoin-tx-res.rc
 endif
 
-pigycoin_tx_LDADD = \
+nestcoin_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBPIGYCOIN_COMMON) \
-  $(LIBPIGYCOIN_UTIL) \
-  $(LIBPIGYCOIN_CONSENSUS) \
-  $(LIBPIGYCOIN_CRYPTO) \
+  $(LIBNESTCOIN_COMMON) \
+  $(LIBNESTCOIN_UTIL) \
+  $(LIBNESTCOIN_CONSENSUS) \
+  $(LIBNESTCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-pigycoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+nestcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# pigycoinconsensus library #
-if BUILD_PIGYCOIN_LIBS
-include_HEADERS = script/pigycoinconsensus.h
-libpigycoinconsensus_la_SOURCES = $(crypto_libpigycoin_crypto_base_a_SOURCES) $(libpigycoin_consensus_a_SOURCES)
+# nestcoinconsensus library #
+if BUILD_NESTCOIN_LIBS
+include_HEADERS = script/nestcoinconsensus.h
+libnestcoinconsensus_la_SOURCES = $(crypto_libnestcoin_crypto_base_a_SOURCES) $(libnestcoin_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libpigycoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libnestcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libpigycoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libpigycoinconsensus_la_LIBADD = $(LIBSECP256K1) $(CRYPTO_LIBS)
-libpigycoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_PIGYCOIN_INTERNAL $(SSL_CFLAGS)
-libpigycoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libnestcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libnestcoinconsensus_la_LIBADD = $(LIBSECP256K1) $(CRYPTO_LIBS)
+libnestcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_NESTCOIN_INTERNAL $(SSL_CFLAGS)
+libnestcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
@@ -548,12 +548,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST = $(CTAES_DIST)
 
 
-config/pigycoin-config.h: config/stamp-h1
+config/nestcoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/pigycoin-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/nestcoin-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/pigycoin-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/pigycoin-config.h.in
+$(top_srcdir)/$(subdir)/config/nestcoin-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/nestcoin-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

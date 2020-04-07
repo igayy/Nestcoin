@@ -9,7 +9,7 @@
 #include <uint256.h>
 #include <util.h>
 #include <utilstrencodings.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <string>
 #include <vector>

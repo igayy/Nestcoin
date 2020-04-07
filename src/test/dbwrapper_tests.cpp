@@ -5,7 +5,7 @@
 #include <dbwrapper.h>
 #include <uint256.h>
 #include <random.h>
-#include <test/test_pigycoin.h>
+#include <test/test_nestcoin.h>
 
 #include <memory>
 

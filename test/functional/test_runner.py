@@ -10,7 +10,7 @@ forward all unrecognized arguments onto the individual test scripts.
 Functional tests are disabled on Windows by default. Use --force to run them anyway.
 
 For a description of arguments recognized by test scripts, see
-`test/functional/test_framework/test_framework.py:PigycoinTestFramework.main`.
+`test/functional/test_framework/test_framework.py:NestcoinTestFramework.main`.
 
 """
 
@@ -86,7 +86,7 @@ BASE_SCRIPTS = [
     # vv Tests less than 30s vv
     'wallet_keypool_topup.py',
     'interface_zmq.py',
-    'interface_pigycoin_cli.py',
+    'interface_nestcoin_cli.py',
     'mempool_resurrect.py',
     'wallet_txn_doublespend.py --mineblock',
     'wallet_txn_clone.py',
@@ -238,15 +238,15 @@ def main():
 
     logging.debug("Temporary test directory at %s" % tmpdir)
 
-    enable_pigycoind = config["components"].getboolean("ENABLE_PIGYCOIND")
+    enable_nestcoind = config["components"].getboolean("ENABLE_NESTCOIND")
 
     if config["environment"]["EXEEXT"] == ".exe" and not args.force:
-        # https://github.com/pigycoin/pigycoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
-        # https://github.com/pigycoin/pigycoin/pull/5677#issuecomment-136646964
+        # https://github.com/nestcoin/nestcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
+        # https://github.com/nestcoin/nestcoin/pull/5677#issuecomment-136646964
         print("Tests currently disabled on Windows by default. Use --force option to enable")
         sys.exit(0)
 
-    if not enable_pigycoind:
+    if not enable_nestcoind:
         print("No functional tests to run.")
         print("Rerun ./configure with --with-daemon and then make")
         sys.exit(0)
@@ -310,10 +310,10 @@ def main():
 def run_tests(test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False):
     args = args or []
 
-    # Warn if pigycoind is already running (unix only)
+    # Warn if nestcoind is already running (unix only)
     try:
-        if subprocess.check_output(["pidof", "pigycoind"]) is not None:
-            print("%sWARNING!%s There is already a pigycoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.check_output(["pidof", "nestcoind"]) is not None:
+            print("%sWARNING!%s There is already a nestcoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -554,7 +554,7 @@ class RPCCoverage():
     Coverage calculation works by having each test script subprocess write
     coverage files into a particular directory. These files contain the RPC
     commands invoked during testing, as well as a complete listing of RPC
-    commands per `pigycoin-cli help` (`rpc_interface.txt`).
+    commands per `nestcoin-cli help` (`rpc_interface.txt`).
 
     After all tests complete, the commands run are combined and diff'd against
     the complete list to calculate uncovered RPC commands.

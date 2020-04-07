@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_VALIDATIONINTERFACE_H
-#define PIGYCOIN_VALIDATIONINTERFACE_H
+#ifndef NESTCOIN_VALIDATIONINTERFACE_H
+#define NESTCOIN_VALIDATIONINTERFACE_H
 
 #include <primitives/transaction.h> // CTransaction(Ref)
 
@@ -189,4 +189,4 @@ public:
 
 CMainSignals& GetMainSignals();
 
-#endif // PIGYCOIN_VALIDATIONINTERFACE_H
+#endif // NESTCOIN_VALIDATIONINTERFACE_H

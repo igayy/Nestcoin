@@ -10,10 +10,10 @@
 - verify that getchaintips now returns two chain tips.
 """
 
-from test_framework.test_framework import PigycoinTestFramework
+from test_framework.test_framework import NestcoinTestFramework
 from test_framework.util import assert_equal
 
-class GetChainTipsTest (PigycoinTestFramework):
+class GetChainTipsTest (NestcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
 

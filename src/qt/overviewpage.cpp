@@ -5,7 +5,7 @@
 #include <qt/overviewpage.h>
 #include <qt/forms/ui_overviewpage.h>
 
-#include <qt/pigycoinunits.h>
+#include <qt/nestcoinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
@@ -28,7 +28,7 @@ class TxViewDelegate : public QAbstractItemDelegate
     Q_OBJECT
 public:
     explicit TxViewDelegate(const PlatformStyle *_platformStyle, QObject *parent=nullptr):
-        QAbstractItemDelegate(parent), unit(PigycoinUnits::BTC),
+        QAbstractItemDelegate(parent), unit(NestcoinUnits::BTC),
         platformStyle(_platformStyle)
     {
 
@@ -86,7 +86,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = PigycoinUnits::formatWithUnit(unit, amount, true, PigycoinUnits::separatorAlways);
+        QString amountText = NestcoinUnits::formatWithUnit(unit, amount, true, NestcoinUnits::separatorAlways);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -161,14 +161,14 @@ void OverviewPage::setBalance(const interfaces::WalletBalances& balances)
 {
     int unit = walletModel->getOptionsModel()->getDisplayUnit();
     m_balances = balances;
-    ui->labelBalance->setText(PigycoinUnits::formatWithUnit(unit, balances.balance, false, PigycoinUnits::separatorAlways));
-    ui->labelUnconfirmed->setText(PigycoinUnits::formatWithUnit(unit, balances.unconfirmed_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelImmature->setText(PigycoinUnits::formatWithUnit(unit, balances.immature_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelTotal->setText(PigycoinUnits::formatWithUnit(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelWatchAvailable->setText(PigycoinUnits::formatWithUnit(unit, balances.watch_only_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelWatchPending->setText(PigycoinUnits::formatWithUnit(unit, balances.unconfirmed_watch_only_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelWatchImmature->setText(PigycoinUnits::formatWithUnit(unit, balances.immature_watch_only_balance, false, PigycoinUnits::separatorAlways));
-    ui->labelWatchTotal->setText(PigycoinUnits::formatWithUnit(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, false, PigycoinUnits::separatorAlways));
+    ui->labelBalance->setText(NestcoinUnits::formatWithUnit(unit, balances.balance, false, NestcoinUnits::separatorAlways));
+    ui->labelUnconfirmed->setText(NestcoinUnits::formatWithUnit(unit, balances.unconfirmed_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelImmature->setText(NestcoinUnits::formatWithUnit(unit, balances.immature_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelTotal->setText(NestcoinUnits::formatWithUnit(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelWatchAvailable->setText(NestcoinUnits::formatWithUnit(unit, balances.watch_only_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelWatchPending->setText(NestcoinUnits::formatWithUnit(unit, balances.unconfirmed_watch_only_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelWatchImmature->setText(NestcoinUnits::formatWithUnit(unit, balances.immature_watch_only_balance, false, NestcoinUnits::separatorAlways));
+    ui->labelWatchTotal->setText(NestcoinUnits::formatWithUnit(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, false, NestcoinUnits::separatorAlways));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users

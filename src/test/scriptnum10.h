@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_TEST_SCRIPTNUM10_H
-#define PIGYCOIN_TEST_SCRIPTNUM10_H
+#ifndef NESTCOIN_TEST_SCRIPTNUM10_H
+#define NESTCOIN_TEST_SCRIPTNUM10_H
 
 #include <algorithm>
 #include <limits>
@@ -23,7 +23,7 @@ public:
 class CScriptNum10
 {
 /**
- * The ScriptNum implementation from Pigycoin Core 0.10.0, for cross-comparison.
+ * The ScriptNum implementation from Nestcoin Core 0.10.0, for cross-comparison.
  */
 public:
 
@@ -180,4 +180,4 @@ private:
 };
 
 
-#endif // PIGYCOIN_TEST_BIGNUM_H
+#endif // NESTCOIN_TEST_BIGNUM_H

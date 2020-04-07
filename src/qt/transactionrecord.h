@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_TRANSACTIONRECORD_H
-#define PIGYCOIN_QT_TRANSACTIONRECORD_H
+#ifndef NESTCOIN_QT_TRANSACTIONRECORD_H
+#define NESTCOIN_QT_TRANSACTIONRECORD_H
 
 #include <amount.h>
 #include <uint256.h>
@@ -145,4 +145,4 @@ public:
     bool statusUpdateNeeded(int numBlocks) const;
 };
 
-#endif // PIGYCOIN_QT_TRANSACTIONRECORD_H
+#endif // NESTCOIN_QT_TRANSACTIONRECORD_H

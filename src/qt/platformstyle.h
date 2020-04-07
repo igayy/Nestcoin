@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_PLATFORMSTYLE_H
-#define PIGYCOIN_QT_PLATFORMSTYLE_H
+#ifndef NESTCOIN_QT_PLATFORMSTYLE_H
+#define NESTCOIN_QT_PLATFORMSTYLE_H
 
 #include <QIcon>
 #include <QPixmap>
@@ -51,5 +51,5 @@ private:
     /* ... more to come later */
 };
 
-#endif // PIGYCOIN_QT_PLATFORMSTYLE_H
+#endif // NESTCOIN_QT_PLATFORMSTYLE_H
 

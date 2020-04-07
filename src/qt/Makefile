@@ -1,9 +1,9 @@
 .PHONY: FORCE
 all: FORCE
-	$(MAKE) -C .. pigycoin_qt test_pigycoin_qt
+	$(MAKE) -C .. nestcoin_qt test_nestcoin_qt
 clean: FORCE
-	$(MAKE) -C .. pigycoin_qt_clean test_pigycoin_qt_clean
+	$(MAKE) -C .. nestcoin_qt_clean test_nestcoin_qt_clean
 check: FORCE
-	$(MAKE) -C .. test_pigycoin_qt_check
-pigycoin-qt pigycoin-qt.exe: FORCE
-	 $(MAKE) -C .. pigycoin_qt
+	$(MAKE) -C .. test_nestcoin_qt_check
+nestcoin-qt nestcoin-qt.exe: FORCE
+	 $(MAKE) -C .. nestcoin_qt

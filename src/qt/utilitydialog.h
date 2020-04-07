@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_QT_UTILITYDIALOG_H
-#define PIGYCOIN_QT_UTILITYDIALOG_H
+#ifndef NESTCOIN_QT_UTILITYDIALOG_H
+#define NESTCOIN_QT_UTILITYDIALOG_H
 
 #include <QDialog>
 #include <QObject>
 
-class PigycoinGUI;
+class NestcoinGUI;
 
 namespace interfaces {
     class Node;
@@ -46,10 +46,10 @@ class ShutdownWindow : public QWidget
 
 public:
     explicit ShutdownWindow(QWidget *parent=0, Qt::WindowFlags f=0);
-    static QWidget *showShutdownWindow(PigycoinGUI *window);
+    static QWidget *showShutdownWindow(NestcoinGUI *window);
 
 protected:
     void closeEvent(QCloseEvent *event);
 };
 
-#endif // PIGYCOIN_QT_UTILITYDIALOG_H
+#endif // NESTCOIN_QT_UTILITYDIALOG_H

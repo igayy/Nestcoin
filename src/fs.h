@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_FS_H
-#define PIGYCOIN_FS_H
+#ifndef NESTCOIN_FS_H
+#define NESTCOIN_FS_H
 
 #include <stdio.h>
 #include <string>
@@ -21,4 +21,4 @@ namespace fsbridge {
     FILE *freopen(const fs::path& p, const char *mode, FILE *stream);
 };
 
-#endif // PIGYCOIN_FS_H
+#endif // NESTCOIN_FS_H

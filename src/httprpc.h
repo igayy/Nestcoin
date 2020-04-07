@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_HTTPRPC_H
-#define PIGYCOIN_HTTPRPC_H
+#ifndef NESTCOIN_HTTPRPC_H
+#define NESTCOIN_HTTPRPC_H
 
 #include <string>
 #include <map>

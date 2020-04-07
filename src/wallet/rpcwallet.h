@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_RPCWALLET_H
-#define PIGYCOIN_WALLET_RPCWALLET_H
+#ifndef NESTCOIN_WALLET_RPCWALLET_H
+#define NESTCOIN_WALLET_RPCWALLET_H
 
 #include <string>
 
@@ -31,4 +31,4 @@ bool EnsureWalletIsAvailable(CWallet *, bool avoidException);
 UniValue getaddressinfo(const JSONRPCRequest& request);
 UniValue signrawtransactionwithwallet(const JSONRPCRequest& request);
 bool FillPSBT(const CWallet* pwallet, PartiallySignedTransaction& psbtx, int sighash_type = 1 /* SIGHASH_ALL */, bool sign = true, bool bip32derivs = false);
-#endif //PIGYCOIN_WALLET_RPCWALLET_H
+#endif //NESTCOIN_WALLET_RPCWALLET_H

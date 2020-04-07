@@ -1,10 +1,10 @@
 // Copyright (c) 2020 Wayan Saka
-// Copyright (c) 2020 The Pigycoin Core developers
+// Copyright (c) 2020 The Nestcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_ADDRDB_H
-#define PIGYCOIN_ADDRDB_H
+#ifndef NESTCOIN_ADDRDB_H
+#define NESTCOIN_ADDRDB_H
 
 #include <fs.h>
 #include <serialize.h>
@@ -99,4 +99,4 @@ public:
     bool Read(banmap_t& banSet);
 };
 
-#endif // PIGYCOIN_ADDRDB_H
+#endif // NESTCOIN_ADDRDB_H

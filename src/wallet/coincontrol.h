@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIGYCOIN_WALLET_COINCONTROL_H
-#define PIGYCOIN_WALLET_COINCONTROL_H
+#ifndef NESTCOIN_WALLET_COINCONTROL_H
+#define NESTCOIN_WALLET_COINCONTROL_H
 
 #include <policy/feerate.h>
 #include <policy/fees.h>
@@ -78,4 +78,4 @@ private:
     std::set<COutPoint> setSelected;
 };
 
-#endif // PIGYCOIN_WALLET_COINCONTROL_H
+#endif // NESTCOIN_WALLET_COINCONTROL_H
