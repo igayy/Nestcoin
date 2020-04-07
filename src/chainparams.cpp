@@ -103,7 +103,7 @@ public:
 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000b0718787f01e");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xa601455787cb65ffc325dda4751a99cf01d1567799ec4b04f45bb05f9ef0cbde"); //1503191
@@ -113,10 +113,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc2;
-        pchMessageStart[2] = 0xb9;
-        pchMessageStart[3] = 0xdc;
+        pchMessageStart[0] = 0xa1;
+        pchMessageStart[1] = 0x98;
+        pchMessageStart[2] = 0xd9;
+        pchMessageStart[3] = 0xdb;
         nDefaultPort = 7222;
         nPruneAfterHeight = 100000;
 
@@ -134,14 +134,14 @@ public:
         vSeeds.emplace_back("207.148.21.70:7222");
         vSeeds.emplace_back("69.85.85.17:7222");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,117);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,55);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "pigy";
+        bech32_hrp = "nest";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -208,10 +208,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x438b7e1c86f58b4e62e8cf2d0f9f256e3dddaebc5d1cc568e633a38e0db6c025"); //787085
 
-        pchMessageStart[0] = 0xfe;
-        pchMessageStart[1] = 0xd4;
-        pchMessageStart[2] = 0xc7;
-        pchMessageStart[3] = 0xf3;
+        pchMessageStart[0] = 0x84;
+        pchMessageStart[1] = 0xda;
+        pchMessageStart[2] = 0xb5;
+        pchMessageStart[3] = 0xb4;
         nDefaultPort = 19225;
         nPruneAfterHeight = 1000;
 
@@ -233,7 +233,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tpyc";
+        bech32_hrp = "test";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -295,10 +295,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xbd;
-        pchMessageStart[2] = 0xb2;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[0] = 0xa6;
+        pchMessageStart[1] = 0xef;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0x98;
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
@@ -326,14 +326,14 @@ public:
             0
         };
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,122);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,58);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "rpyc";
+        bech32_hrp = "rest";
 
         /* enable fallback fee on regtest */
         m_fallback_fee_enabled = true;
