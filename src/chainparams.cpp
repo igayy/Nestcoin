@@ -69,7 +69,7 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
  *    timestamp before)
  * + Contains no strange transactions
  */
-1486949366,
+
 class CMainParams : public CChainParams {
 public:
     CMainParams() {
@@ -177,7 +177,7 @@ public:
         consensus.nSubsidyHalvingInterval = 840000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on testnet
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x3a4d30bb23728273605ffae636ba21ca7fe7251cb4333e7587b5124cf661e096");
+        consensus.BIP34Hash = uint256S("0x6f73966fa5646539a3f6a13ed7b76bc916f9efa779f630828dfffc58dc9d306f");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -215,9 +215,9 @@ public:
         nDefaultPort = 19225;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1486949366, 1476412, 0x1e0ffff0, 1, 25 * COIN);
+        genesis = CreateGenesisBlock(1586424865, 1021983, 0x1e0ffff0, 1, 25 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x3a4d30bb23728273605ffae636ba21ca7fe7251cb4333e7587b5124cf661e096"));
+        assert(consensus.hashGenesisBlock == uint256S("0x6f73966fa5646539a3f6a13ed7b76bc916f9efa779f630828dfffc58dc9d306f"));
         assert(genesis.hashMerkleRoot == uint256S("0xa9536a807bc89e386da16ddd9b5fb9622f02c71622bffcad0b815a946e51e29c"));
 
         vFixedSeeds.clear();
@@ -243,13 +243,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("0x3a4d30bb23728273605ffae636ba21ca7fe7251cb4333e7587b5124cf661e096")},
+                {0, uint256S("0x6f73966fa5646539a3f6a13ed7b76bc916f9efa779f630828dfffc58dc9d306f")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 438b7e1c86f58b4e62e8cf2d0f9f256e3dddaebc5d1cc568e633a38e0db6c025
-            /* nTime    */ 1486949366,
+            /* nTime    */ 1586424865,
             /* nTxCount */ 0,
             /* dTxRate  */ 1.907
         };
